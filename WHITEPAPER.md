@@ -350,4 +350,4 @@ It is hard to conclude for Binance Chain, as it has never stopped evolving. The 
 
 ------
 
-[[1\]](#_ftnref1) BNB business practitioners may provide other benefits for BNB delegators, as they do now for long term BNB holders.
+[1](#_ftnref1) BNB business practitioners may provide other benefits for BNB delegators, as they do now for long term BNB holders.
