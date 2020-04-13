@@ -253,7 +253,7 @@ With the above features, it simply adds the cross-chain transfer and exchange fu
 
 Proof of Staked Authority brings in decentralization and community involvement. Its core logic can be summarized as the below. You may see similar ideas from other networks, especially Cosmos and EOS.
 
-1. Token holders, including the validators, can put their tokens “**bonded**” into the stake. Token holders can **delegate** their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to **re-delegate** their tokens[[1\]](#_ftn1).
+1. Token holders, including the validators, can put their tokens “**bonded**” into the stake. Token holders can **delegate** their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to **re-delegate** their tokens[\[1\]][1].
 2. All validator candidates will be ranked by the number of bonded tokens on them, and the top ones will become the real validators.
 3. Validators can share (part of) their blocking reward with their delegators.
 4. Validators can suffer from “**Slashing**”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will be shared by their **delegators as well**.
@@ -350,4 +350,4 @@ It is hard to conclude for Binance Chain, as it has never stopped evolving. The 
 
 ------
 
-[1](#_ftnref1) BNB business practitioners may provide other benefits for BNB delegators, as they do now for long term BNB holders.
+[1] BNB business practitioners may provide other benefits for BNB delegators, as they do now for long term BNB holders.
