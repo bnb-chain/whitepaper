@@ -70,7 +70,7 @@ Meanwhile, the PoA protocol is most criticized for being not as decentralized as
 
 BSC here proposes to combine DPoS and PoA for consensus, so that:
 1. Blocks are produced by a limited set of validators
-2. Validators take turns to produce blocks ina PoA manner, similar to [Ethereum’s Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
+2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum’s Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
 3. Validator set are elected in and out based on a staking based governance
 
 ## Validator Quorum
