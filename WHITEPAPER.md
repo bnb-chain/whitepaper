@@ -134,7 +134,7 @@ A typical procedure to bind the BEP2 and BEP2E will be like the below:
 1. Ensure both the BEP2 token and the BEP2E token both exist on each blockchain, with the same total supply. BEP2E should have 3 more methods than typical ERC20 token standard:
     *  symbol(): get token symbol
     *  decimals(): get the number of the token decimal digits
-    *  BinderAddress(): get **Binder contract owner’s address.** This value should be initialized in the BEP2E contract constructor so that the further binding action can verify whether the binding gets the consent of the BEP2E owner.
+    *  owner(): get **BEP2E contract owner’s address.** This value should be initialized in the BEP2E contract constructor so that the further binding action can verify whether the binding gets the consent of the BEP2E owner.
 
 2. Decide the initial circulation on both blockchains. Suppose the total supply is *S*, and the expected initial circulating supply on BC is *K*, then the owner should lock S-K tokens to a system controlled address on BC.
 
