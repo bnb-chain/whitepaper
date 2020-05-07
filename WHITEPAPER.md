@@ -181,7 +181,7 @@ The architecture of cross-chain communication is as in the above diagram. To acc
 
 BC is a Tendermint-based, instant finality blockchain. Validators with at least ⅔*N+1 of the total voting power will co-sign each block on the chain. So that it is practical to verify the block transactions and even the state value via **Block Header** and **Merkle Proof** verification. This has been researched and implemented as “**Light-Client Protocol**”, which are intensively discussed in [the Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol) community, studied and implemented for [Cosmos inter-chain communication](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
 
-BC-to-BSC communication will be verified in an “**on-chain light client**” implemented via BSC **Smart Contracts** (some of them may be **“pre-compiled”**). After some transactions and state change happen on BC, if a transaction is defined to trigger cross-chain communication, the **Relayers** will create and pass the Cross-chain “**package”** message and submit onto BSC as data into the “light client contracts”. The light client will verify the package and execute the transactions if it passes the verification. The verification will be guaranteed with the below design:
+BC-to-BSC communication will be verified in an “**on-chain light client**” implemented via BSC **Smart Contracts** (some of them may be **“pre-compiled”**). After some transactions and state change happen on BC, if a transaction is defined to trigger cross-chain communication, the **BSC Relayers** will create and pass the Cross-chain “**package”** message and submit onto BSC as data into the “light client contracts”. The light client will verify the package and execute the transactions if it passes the verification. The verification will be guaranteed with the below design:
 
 1. BC blocking status will be synced to the light client contracts on BSC from time to time, via     block header and pre-commits, for the below information:
     * block and app hash of BC that are signed by validators
@@ -311,11 +311,13 @@ There are many system parameters to control the behavior of the BSC, e.g. slash 
 
 Relayers are responsible to submit Cross-Chain Communication Packages between the two blockchains. Due to the heterogeneous parallel chain structure, two different types of Relayers are created.
 
-Relayers for BC to BSC communication referred to as “**Relayers**” are a standalone process that can be run by anyone, and anywhere, except that Relayers must register themselves onto BSC and deposit a certain amount of BNB. Only relaying requests from the registered Relayers will be accepted by BSC.
+## BSC Relayers
+
+Relayers for BC to BSC communication referred to as “**BSC Relayers**”, or just simply “Relayers”. Relayer is a standalone process that can be run by anyone, and anywhere, except that Relayers must register themselves onto BSC and deposit a certain refundable amount of BNB. Only relaying requests from the registered Relayers will be accepted by BSC. 
 
 The package they relay will be verified by the on-chain light client on BSC. The successful relay needs to pass enough verification and costs gas fees on BSC, and thus there should be incentive reward to encourage the community to run Relayers.
 
-## Incentives
+### Incentives
 
 There are two major communication types:
 
