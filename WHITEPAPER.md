@@ -181,7 +181,7 @@ The architecture of cross-chain communication is as in the above diagram. To acc
 
 BC is a Tendermint-based, instant finality blockchain. Validators with at least ⅔*N+1 of the total voting power will co-sign each block on the chain. So that it is practical to verify the block transactions and even the state value via **Block Header** and **Merkle Proof** verification. This has been researched and implemented as “**Light-Client Protocol**”, which are intensively discussed in [the Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol) community, studied and implemented for [Cosmos inter-chain communication](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
 
-BC-to-BSC communication will be verified in an “**on-chain light client**” implemented via BSC **Smart Contracts** (some of them may be **“pre-compiled”**). After some transactions and state change happen on BC, if a transaction is defined to trigger cross-chain communication, the **BSC Relayers** will create and pass the Cross-chain “**package”** message and submit onto BSC as data into the “light client contracts”. The light client will verify the package and execute the transactions if it passes the verification. The verification will be guaranteed with the below design:
+BC-to-BSC communication will be verified in an “**on-chain light client**” implemented via BSC **Smart Contracts** (some of them may be **“pre-compiled”**). After some transactions and state change happen on BC, if a transaction is defined to trigger cross-chain communication,the Cross-chain “**package**” message will be created and **BSC Relayers** will pass and submit them onto BSC as data into the “build-in system contracts. The build-in system contracts will verify the package and execute the transactions if it passes the verification. The verification will be guaranteed with the below design:
 
 1. BC blocking status will be synced to the light client contracts on BSC from time to time, via     block header and pre-commits, for the below information:
     * block and app hash of BC that are signed by validators
@@ -189,7 +189,7 @@ BC-to-BSC communication will be verified in an “**on-chain light client**” i
 
 2. the key-value from the blockchain state will be verified based on the Merkle     Proof and information from above #1.
 
-After confirming the key-value is accurate and trustful, the light client contracts will execute the actions corresponding to the cross-chain packages. Some examples of such packages that can be created for BC-to-BSC are:
+After confirming the key-value is accurate and trustful, the build-in system contracts contracts will execute the actions corresponding to the cross-chain packages. Some examples of such packages that can be created for BC-to-BSC are:
 
 1. Bind: bind the BEP2 tokens and BEP2E
 2. Transfer: transfer tokens after binding, this means the circulation will decrease (be locked)     from BC and appear in the target address balance on BSC
