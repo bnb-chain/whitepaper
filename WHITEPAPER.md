@@ -293,7 +293,7 @@ It is quite a serious error and very likely deliberate offense when a validator 
 Anyone can submit a slash request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator. Upon receiving the evidence, if the BC verifies it to be valid:
 
 1. The validator will be removed from validator set by an instance BSC validator set update Cross-Chain update;
-2. A predefined amount of BNB would be slashed from the **self-delegated** BNB of the validator;
+2. A predefined amount of BNB would be slashed from the **self-delegated** BNB of the validator; Both validator and its delegators will not receive the staking rewards. 
 3. Part of the slashed BNB will allocate to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
 4. The rest of the slashed BNB will allocate to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
 
