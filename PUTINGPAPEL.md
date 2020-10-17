@@ -6,8 +6,8 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
 
 ## Talaan ng Nilalaman
 
-- [Pagganyak](#motivation)
-- [Mga Prinsipyo ng Disenyo](#design-principles)
+- [Pagganyak](#pagganyak)
+- [Mga Prinsipyo ng Disenyo](#mga-prinsipyo-ng-disenyo)
 - [Consensus and Validator Quorum](#consensus-and-validator-quorum)
   * [Proof of Staked Authority](#proof-of-staked-authority)
   * [Validator Quorum](#validator-quorum)
