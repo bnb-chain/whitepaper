@@ -16,7 +16,7 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
 - [Ekonomiya ng Token](#ekonomiya-ng-token)
   * [Katutubong Token](#katutubong-token)
   * [Iba Pang Mga Token](#iba-pang-mga-token)
-- [Cross-Chain Transfer and Communication](#cross-chain-transfer-and-communication)
+- [Cross-Chain na Paglipat at Komunikasyon](#cross-chain-na-paglipat-at-komunikasyon)
   * [Cross-Chain Transfer](#cross-chain-transfer)
   * [BC to BSC Architecture](#bc-to-bsc-architecture)
   * [BSC to BC Architecture](#bsc-to-bc-architecture)
@@ -155,3 +155,28 @@ Ang isang tipikal na pamamaraan upang maibigkis ang BEP2 at BEP2E ay magiging ka
     * ang tamang lock ay tapos na sa parehong mga network;
 
 10. Kapag nagtagumpay ang pamamaraang `ApproveBind`, mamarkahan ng TokenHub ang dalawang mga token na nakabigkis na at magkabahagi sa parehong sirkulasyon sa BSC, at ang istado ay ikakalat pabalik sa BC. Matapos ang pangwakas na kumpirmasyon na ito, ang address ng kontrata ng BEP2E at mga desimal ay isusulat sa token na BEP2 bilang isang bagong katangian sa BC, at ang mga token ay maaaring mailipat sa dalawang mga blockchain na magkabilaang direksyon. Kung nabigo ang ApproveBind, ang kaganapan ng kabiguan ay ikakalat din pabalik sa BC upang palabasin ang mga naka-lock na token, at ang mga hakbang sa itaas ay maaaring subukang muli sa paglaon.
+
+# Cross-Chain na Paglipat at Komunikasyon
+
+Ang komunikasyon na cross-chain ay ang pangunahing pundasyon upang payagan ang komunidad na samantalahin ang istraktura ng dalawahang kadena:
+
+* Ang mga gumagamit ay malayang lumikha ng anumang tokenization, mga produktong pampinansyal, at mga digital na assets sa BSC o BC ayon sa gusto nila
+* ang mga item sa BSC ay maaaring manu-manong at naka-program na ikakalakal at ikakalat sa isang matatag, mataas na throughput, kasingbilis ng kidlat at magiliw na kapaligiran ng BC
+* Maaaring mapatakbo ng mga gumagamit ang mga ito sa isang UI at ecosystem ng mga kasangkapan.
+
+## Cross-Chain na Paglipat
+
+Ang cross-chain na paglipat ay ang pangunahing komunikasyon sa pagitan ng dalawang mga blockchain. Sa madaling sabi ang lohika ay:
+
+1. ang `transfer-out` blockchain ay ikakandado ang halaga mula sa mga address ng may-ari ng pinagmulan sa isang kinokontrol ng sistema na address/mga kontrata;
+2. ang `transfer-in` blockchain ay bubuksan ang halaga mula sa kinokontrol ng sistema na address/ mga kontrata at ipadala ito sa mga target na address.
+
+Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Oracle na mga Tagahatid** na i-verify:
+
+1. Sapat na halaga ng mga token assets ay inalis mula sa pinagmulang address at naka-lock sa isang kontrolado ng sistema na mga address/mga kontrata sa pinagmulang blockchain. At maaaring makumpirma ito sa target na blockchain.
+2. Ang mga wastong halaga ng mga token na assets ay inilabas mula sa kontrolado ng sistema na mga address/mga kontrata at inilalaan sa mga target na address sa target na blockchain. Kung nabigo ito, makukumpirma ito sa pinagmulang blockchain, upang ang naka-lock na token ay maaaring mailabas pabalik (maaaring ibawas ang mga bayarin).
+3. Ang suma ng kabuuang sirkulasyon ng mga token assets sa kabuuan ng 2 mga blockchain ay hindi binago matapos makumpleto ang paglipat na kilos, kung magtagumpay man ang paglipat o hindi.
+
+![cross-chain](./assets/cross-chain.png)
+
+Ang arkitektura ng cross-chain na komunikasyon ay tulad ng nasa itaas na diagram. Upang mapaunlakan ang 2 mga heteroid na sistema, ang paghawak ng komunikasyon ay magkakaiba sa bawat direksyon.
