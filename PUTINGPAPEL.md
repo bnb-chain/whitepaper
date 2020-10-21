@@ -51,7 +51,7 @@ Narito ang mga prinsipyo ng disenyo ng **BSC**:
 1. **Malayang Blockchain**: sa panteknikal na salita, ang BSC ay isang nagsasariling blockchain, sa halip na isang layer-2 na solusyon. Karamihan sa mga pangunahing kakayahan ng BSC na panteknikal at pang-negosyo ay dapat na umiiral sa loob ng sarili niya upang maaari pa rin itong tumakbo nang maayos kahit na huminto pansamantala ang BC ng maikling panahon.
 2. **Pagkatugma sa Ethereum**: Ang unang praktikal at malawak na ginagamit na platform para sa Matalinong Kontrata ay ang Ethereum. Upang samantalahin ang medyo maunlad na mga aplikasyon at komunidad nito, pinili ng BSC na maging katugma sa umiiral na Ethereum mainnet. Nangangahulugan ito na ang karamihan sa **dApps**, mga bahagi ng ecosystem, at mga iba't ibang kasangkapan ay gagana sa BSC at mangangailangan ng wala o kaunti lamang na mga pagbabago; Mangangailangan ang BSC node ng katulad (o medyo mas mataas) na katangian ng hardware at kakayahan upang tumakbo at mapatakbo. Ang ganitong pagpapatupad ay dapat mag-iwan ng lugar para sa BSC na makahabol sa karagdagang mga pagsulong ng Ethereum.
 3. **Pagtaya na Kaakibat sa Pagkakasundo at Pamamahala**: Ang pagkakasundo na nakabase sa Pagtaya ay mas mainam sa kapaligiran at nag-iiwan ng mas may kakayahang umangkop na pamamaraan sa pamamahala ng komunidad. Inaasahan, ang ganitong uri ng pakakasundo ay kayang magbigay ng mas mahusay na pagtakbo ng network sa [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) na sistema ng blockchain, hal. mabilis na oras ng pagbuo ng bloke at mas mataas na kapasidad sa transaksyon.
-4. **Katutubong na Komunikasyon na Cross-Chain**: ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa komunikasyon na cross-chain sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga token ng BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lamang.
+4. **Katutubong na Komunikasyon na Cross-Chain**: ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa komunikasyon na cross-chain sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga token na BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lamang.
 
 # Pagkakasunduan at Korum ng mga Tagapagpatunay
 
@@ -102,7 +102,7 @@ Ang ilang mga bahagi ng bayad sa gas ay igagantimpala din sa mga tagahatid para 
 
 # Ekonomiya ng Token
 
-Ang BC at BSC ay naghahati sa parehong sandaigdig ng token para sa mga token ng BNB at BEP2. Tinutukoy nito:
+Ang BC at BSC ay naghahati sa parehong sandaigdig ng token para sa mga token na BNB at BEP2. Tinutukoy nito:
 
 1. Ang parehong token ay maaaring umikot sa dalawang network, at dumadaloy sa pagitan ng mga ito ng magkabilaang direksyon sa pamamagitan ng mekanismo ng komunikasyon na cross-chain.
 2. Ang kabuuang sirkulasyon ng parehong token ay dapat na pangasiwaan sa dalawang network, ibig sabihin, ang kabuuang epektibo na suplay ng isang token ay dapat na suma ng kabuuang epektibo na supply ng token sa parehong BSC at BC.
@@ -124,4 +124,34 @@ Ang BNB cross-chain transfer ay tinalakay sa isang susunod na seksyon, ngunit pa
 
 ## Iba Pang Mga Token
 
-Sinusuportahan ng BC ang mga token ng BEP2 at paparating na [mga token ng BEP8](https://github.com/binance-chain/BEPs/pull/69), na mga katutubong asset na maililipat at maibebenta (kung nakalista) sa pamamagitan ng mabilis na mga transaksyon at mababa sa isang segundong kawakasan. Samantala, dahil ang BSC ay katugma sa Ethereum, natural na suportahan ang mga token ng ERC20 sa BSC, na kung saan dito ay tinatawag na “**BEP2E**” (na ang tunay na pangalan ay ipapakilala ng mga BEP sa hinaharap, potensyal itong sumasakop din sa BEP8). Ang BEP2E ay maaaring "Pinahusay" sa pamamagitan ng pagdaragdag ng ilang mga kakayahan upang mailantad ang higit pang impormasyon, tulad ng denominasyon ng token, kahulugan ng katumpakan ng desimal at ang address ng may-ari na maaaring magpasya sa Token Binding sa mga kadena. Ang BSC at BC ay nagtutulungan upang matiyak na ang isang token ay maaaring umikot sa parehong ayos na may kumpirmadong kabuuang panustos at magagamit sa iba't ibang mga kaso ng paggamit.
+Sinusuportahan ng BC ang mga token na BEP2 at paparating na [mga token na BEP8](https://github.com/binance-chain/BEPs/pull/69), na mga katutubong asset na maililipat at maibebenta (kung nakalista) sa pamamagitan ng mabilis na mga transaksyon at mababa sa isang segundong kawakasan. Samantala, dahil ang BSC ay katugma sa Ethereum, natural na suportahan ang mga token na ERC20 sa BSC, na kung saan dito ay tinatawag na “**BEP2E**” (na ang tunay na pangalan ay ipapakilala ng mga BEP sa hinaharap, potensyal itong sumasakop din sa BEP8). Ang BEP2E ay maaaring "Pinahusay" sa pamamagitan ng pagdaragdag ng ilang mga kakayahan upang mailantad ang higit pang impormasyon, tulad ng denominasyon ng token, kahulugan ng katumpakan ng desimal at ang address ng may-ari na maaaring magpasya sa Token Binding sa mga kadena. Ang BSC at BC ay nagtutulungan upang matiyak na ang isang token ay maaaring umikot sa parehong ayos na may kumpirmadong kabuuang panustos at magagamit sa iba't ibang mga kaso ng paggamit.
+
+### Pagbigkis ng Token
+
+Ang mga token na BEP2 ay ipapalawak upang magsama ng isang bagong katangian upang maiugnay ang token sa isang kontrata ng token ng BSC BEP2E, na tinatawag na “**Tagabigkis**”, at ang prosesong ito ng pagugnay ay tinatawag na “**Pagbigkis ng Token**”.
+
+Ang Pagbigkis ng Token ay maaaring mangyari sa anumang oras matapos maging handa na ang BEP2 at BEP2E. Ang mga may-ari ng token na alinman sa BEP2 o BEP2E ay hindi kailangang mag-abala tungkol sa Pagbigkis, hanggang sa bago nila talagang nais na gamitin ang mga token sa iba't ibang mga sitwasyon. Ang mga tagapagbigay ay maaaring lumikha ng BEP2 muna o BEP2E muna, at maaari silang maibigkis sa ibang pagkakataon. Siyempre, hinihikayat para sa lahat ng mga tagapagbigay ng BEP2 at BEP2E na itakda nang maaga ang Pagbigkis pagkatapos ng pagbigay.
+
+Ang isang tipikal na pamamaraan upang maibigkis ang BEP2 at BEP2E ay magiging katulad sa ibaba:
+
+1. Tiyaking kapwa ang token na BEP2 at ang token na BEP2E ay parehong umiiral sa bawat blockchain, na may parehong kabuuang supply. Ang BEP2E ay dapat mayroong 3 higit pang mga pamamaraan kaysa sa karaniwang ERC20 token na pamantayan:
+    * `symbol()`: kunin ang simbolo ng token
+    * `decimals()`: kunin ang bilang ng mga desimal na numero ng token
+    * `owner()`: kunin ang **address ng may-ari ng kontrata ng BEP2E.** Ang halagang ito ay dapat na ipasimula sa taga-buo ng kontrata ng BEP2E upang ang karagdagang pagbigkis na pagkilos ay maaaring magpatunay kung ang aksyon ay mula sa may-ari ng BEP2E.
+
+2. Pagpasyahan ang paunang sirkulasyon sa parehong mga blockchain. Ipagpalagay na ang kabuuang supply ay *S*, at ang inaasahang paunang iikot na supply sa BC ay *K*, kung gayon dapat mag-lock ang may-ari ng S-K na dami ng token sa isang address na kontrolado ng sistema sa BC.
+
+3. Katumbas nito, may *K* na dami ng mga token na naka-lock sa espesyal na kontrata sa BSC, na humahawak ng mga pangunahing kakayahan na pagbigkis at pinangalanang **TokenHub**. Ang tagapagbigay ng token na BEP2E ay dapat i-lock ang may *K* na dami ng mga token na iyon sa TokenHub, na magreresulta sa *S-K* na dami ng mga token na iikot sa BSC. Sa gayon ang kabuuang sirkulasyon sa 2 blockchain ay mananatili bilang *S*.
+
+4. Ang nagbigay ng token na BEP2 ay nagpapadala ng transaksyon na pagbigkis sa BC. Kapag ang transaksyon ay matagumpay na naisakatuparan pagkatapos ng wastong pagpapatunay:
+    * Naglilipat ito ng mga token na may *S-K* na dami sa isang address na kontrolado ng sistema sa BC.
+    * Malilikha ang isang pakete na may hiling na cross-chain na pagbigkis, naghihintay para sa mga tagahatid na maghatid.
+
+5. Ang mga Tagahatid sa BSC ay maghahatid ng pakete na may hiling na cross-chain na pagbigkis papunta sa **TokenHub** sa BSC, at ang kaukulang kahilingan at impormasyon ay ilalagay sa kontrata.
+
+6. Ang may-ari ng kontrata at ang may-ari lamang ang maaaring magpatakbo ng isang espesyal na pamamaraan ng kontrata ng TokenHub, ang `ApproveBind`, upang mapatunayan ang hiling na pagbigkis upang markahan ito bilang isang tagumpay. Kukumpirmahin nito:
+    * ang token ay hindi pa nakabigkis;
+    * ang pagbigkis ay para sa tamang simbolo, na may wastong kabuuang suplay at impormasyong desimal;
+    * ang tamang lock ay tapos na sa parehong mga network;
+
+10. Kapag nagtagumpay ang pamamaraang `ApproveBind`, mamarkahan ng TokenHub ang dalawang mga token na nakabigkis na at magkabahagi sa parehong sirkulasyon sa BSC, at ang istado ay ikakalat pabalik sa BC. Matapos ang pangwakas na kumpirmasyon na ito, ang address ng kontrata ng BEP2E at mga desimal ay isusulat sa token na BEP2 bilang isang bagong katangian sa BC, at ang mga token ay maaaring mailipat sa dalawang mga blockchain na magkabilaang direksyon. Kung nabigo ang ApproveBind, ang kaganapan ng kabiguan ay ikakalat din pabalik sa BC upang palabasin ang mga naka-lock na token, at ang mga hakbang sa itaas ay maaaring subukang muli sa paglaon.
