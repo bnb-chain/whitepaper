@@ -17,11 +17,11 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [Katutubong Token](#katutubong-token)
   * [Iba Pang Mga Token](#iba-pang-mga-token)
 - [Cross-Chain na Paglipat at Komunikasyon](#cross-chain-na-paglipat-at-komunikasyon)
-  * [Cross-Chain Transfer](#cross-chain-transfer)
-  * [BC Patungo sa BSC Architecture](#bc-patungo-sa-bsc-architecture)
-  * [BSC to BC Architecture](#bsc-to-bc-architecture)
-  * [Timeout and Error Handling](#timeout-and-error-handling)
-  * [Cross-Chain User Experience](#cross-chain-user-experience)
+  * [Cross-Chain na Paglipat](#cross-chain-na-paglipat)
+  * [BC patungo sa BSC na Arkitektura](#bc-patungo-sa-bsc-na-arkitektura)
+  * [BSC patungo sa BC na Arkitektura](#bsc-patungo-sa-bc-na-arkitektura)
+  * [Pag-timeout at Pangangasiwa ng Kamalian](#pag-timeout-at-pangangasiwa-ng-kamalian)
+  * [Cross-Chain na Karanasan ng Gumagamit](#cross-chain-na-karanasan-ng-gumagamit)
   * [Cross-Chain Contract Event](#cross-chain-contract-event)
 - [Pagtaya at Pamamahala](#pagtaya-at-pamamahala)
   * [Staking on BC](#staking-on-bc)
@@ -29,7 +29,7 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [Slashing](#slashing)
 - [Tagahatid](#tagahatid)
   * [BSC Relayers](#bsc-relayers)
-  * [Oracle Relayers](#oracle-relayers)
+  * [Mga Orakulong Tagahatid](#mga-orakulong-tagahatid)
 - [Outlook](#outlook)
 
 # Pagganyak
@@ -96,7 +96,7 @@ Sa 21 mga tagapagpatunay, kung ang oras ng bloke ay 5 segundo, ang ⅔\*N+1 na m
 
 Lahat ng mga tagapagpatunay ng BSC sa kasalukuyang hanay ng tagapagpatunay ay gagantimpalaan ng mga **bayarin sa transaksyon sa BNB**. Dahil ang BNB ay hindi isang inflationary token, hindi magkakaroon ng mga gantimpala sa pagmimina gaya ng binibigay ng Bitcoin at Ethereum network, at ang bayad sa gas ay ang pangunahing gantimpala para sa mga tagapagpatunay. Dahil ang BNB ay mga utility token din na may iba pang mga gamit, tatangkilikin pa rin ng mga delegado at tagapagpatunay ang iba pang mga benepisyo ng paghawak ng BNB.
 
-Ang gantimpala para sa mga tagapagpatunay ay ang mga bayarin na nakolekta mula sa mga transaksyon sa bawat bloke. Maaaring magpasya ang mga tagapagpatunay kung magkano ang ibabalik sa mga delegado na tumaya sa kanila ng kanilang BNB, upang makaakit ng mas maraming taya. Ang bawat tagapagpatunay ay magpapalitan upang makabuo ng mga bloke sa parehong posibilidad (kung mananatili sila sa 100% na pagka aktibo), sa gayon, sa pangmatagalan, ang lahat ng mga matatag na tagapagpatunay ay maaaring makakuha ng magkakatulad na laki ng gantimpala. Samantala, ang mga taya sa bawat tagapagpatunay ay maaaring magkakaiba, kaya nagdadala ito ng isang kontra-intuitive na sitwasyon na mas maraming mga gumagamit ang nagtitiwala at naglalaan sa isang tagapagpatunay, maaaring makakuha sila ng mas kaunting gantimpala. Kaya't ang mga makatuwiran na delegado ay may posibilidad na magtalaga sa isa na may mas kaunting taya hangga't ang tagapagpatunay ay mapagkakatiwalaan pa rin (ang walang katiyakan na tagapagpatunay ay maaaring magdala ng peligro na pagbawas). Sa huli, ang mga taya sa lahat ng mga tagapagpatunay ay magkakaroon ng mas kaunting pagkakaiba-iba. Ito ay talagang pipigilan ang konsentrasyon ng taya at ang “nanalo ay mananalo palagi” na problemang nakikita sa ilang iba pang mga network.
+Ang gantimpala para sa mga tagapagpatunay ay ang mga bayarin na nakolekta mula sa mga transaksyon sa bawat bloke. Maaaring magpasya ang mga tagapagpatunay kung magkano ang ibabalik sa mga delegado na tumaya sa kanila ng kanilang BNB, upang makaakit ng mas madaming taya. Ang bawat tagapagpatunay ay magpapalitan upang makabuo ng mga bloke sa parehong posibilidad (kung mananatili sila sa 100% na pagka aktibo), sa gayon, sa pangmatagalan, ang lahat ng mga matatag na tagapagpatunay ay maaaring makakuha ng magkakatulad na laki ng gantimpala. Samantala, ang mga taya sa bawat tagapagpatunay ay maaaring magkakaiba, kaya nagdadala ito ng isang kontra-intuitive na sitwasyon na mas madaming mga gumagamit ang nagtitiwala at naglalaan sa isang tagapagpatunay, maaaring makakuha sila ng mas kaunting gantimpala. Kaya't ang mga makatuwiran na delegado ay may posibilidad na magtalaga sa isa na may mas kaunting taya hangga't ang tagapagpatunay ay mapagkakatiwalaan pa rin (ang walang katiyakan na tagapagpatunay ay maaaring magdala ng peligro na pagbawas). Sa huli, ang mga taya sa lahat ng mga tagapagpatunay ay magkakaroon ng mas kaunting pagkakaiba-iba. Ito ay talagang pipigilan ang konsentrasyon ng taya at ang “nanalo ay mananalo palagi” na problemang nakikita sa ilang iba pang mga network.
 
 Ang ilang mga bahagi ng bayad sa gas ay igagantimpala din sa mga tagahatid para sa komunikasyon na Cross-Chain. Mangyaring mag-refer sa seksyong “[Tagahatid](#tagahatid)” sa ibaba.
 
@@ -118,7 +118,7 @@ Ang BNB ay tatakbo sa BSC sa parehong paraan tulad ng ETH na tumatakbo sa Ethere
 
 ### Pondong Binhi
 
-Ang ilang mga halaga ng BNB ay susunugin sa BC at huhulmahin sa BSC sa yugto ng genesis. Ang halagang ito ay tinatawag na "Pondong Binhi" upang mag-ikot sa BSC pagkatapos ng unang bloke, na ipapadala sa paunang BC-to-BSC na Tagahatid (inilarawan sa mga susunod na seksyon) at paunang itinakdang hanay ng tagapagpatunay na ipinakilala sa genesis. Ang mga BNB na ito ay ginagamit upang magbayad ng mga bayarin sa transaksyon habang maaga upang ilipat ang mas maraming BNB mula sa BC papunta sa BSC sa pamamagitan ng mekanismo ng cross-chain.
+Ang ilang mga halaga ng BNB ay susunugin sa BC at huhulmahin sa BSC sa yugto ng genesis. Ang halagang ito ay tinatawag na "Pondong Binhi" upang mag-ikot sa BSC pagkatapos ng unang bloke, na ipapadala sa paunang BC-patungo-sa-BSC na Tagahatid (inilarawan sa mga susunod na seksyon) at paunang itinakdang hanay ng tagapagpatunay na ipinakilala sa genesis. Ang mga BNB na ito ay ginagamit upang magbayad ng mga bayarin sa transaksyon habang maaga upang ilipat ang mas madaming BNB mula sa BC papunta sa BSC sa pamamagitan ng mekanismo ng cross-chain.
 
 Ang BNB cross-chain transfer ay tinalakay sa isang susunod na seksyon, ngunit para sa paglipat mula sa BC patungong BSC, sa pangkalahatan ito ay upang i-lock ang BNB sa BC mula sa pinagmulang address ng paglipat sa isang address na kontrolado ng sistema at i-unlock ang kaukulang halaga mula sa espesyal na kontrata papunta sa target na address ng paglipat sa BSC, o sa kabaligtaran, kapag ililipat mula sa BSC patungong BC, ito ay upang i-lock ang BNB mula sa pinagmulang address sa BSC patungo sa isang espesyal na kontrata at palabasin ang naka-lock na halaga sa BC mula sa address ng system patungo sa target na address. Ang lohika ay nauugnay sa katutubong kodigo sa BC at isang serye ng mga matalinong kontrata sa BSC.
 
@@ -171,7 +171,7 @@ Ang cross-chain na paglipat ay ang pangunahing komunikasyon sa pagitan ng dalawa
 1. ang `transfer-out` blockchain ay ikakandado ang halaga mula sa mga address ng may-ari ng pinagmulan sa isang kinokontrol ng sistema na address/mga kontrata;
 2. ang `transfer-in` blockchain ay bubuksan ang halaga mula sa kinokontrol ng sistema na address/ mga kontrata at ipadala ito sa mga target na address.
 
-Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Oracle na mga Tagahatid** na patunayan:
+Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Orakulo na mga Tagahatid** na patunayan:
 
 1. Sapat na halaga ng mga token assets ay inalis mula sa pinagmulang address at naka-lock sa isang kontrolado ng sistema na mga address/mga kontrata sa pinagmulang blockchain. At maaaring makumpirma ito sa target na blockchain.
 2. Ang mga wastong halaga ng mga token na assets ay inilabas mula sa kontrolado ng sistema na mga address/mga kontrata at inilalaan sa mga target na address sa target na blockchain. Kung nabigo ito, makukumpirma ito sa pinagmulang blockchain, upang ang naka-lock na token ay maaaring mailabas pabalik (maaaring ibawas ang mga bayarin).
@@ -181,9 +181,9 @@ Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC
 
 Ang arkitektura ng cross-chain na komunikasyon ay tulad ng nasa itaas na diagram. Upang mapaunlakan ang 2 mga heteroid na sistema, ang paghawak ng komunikasyon ay magkakaiba sa bawat direksyon.
 
-## BC Patungo sa BSC Architecture
+## BC patungo sa BSC na Arkitektura
 
-Ang BC ay isang blockchain na nakabatay sa Tendermint at may kagyat na kawakasan. Ang mga Tagapagpatunay na may hindi bababa sa ⅔\*N+1 ng kabuuang kapangyarihan sa pagboto ay kasabay na mag pipirma ng bawat bloke sa kadena. Kaya't praktikal na patunayan ang mga transaksyon sa bloke at kahit ang halaga ng estado sa pamamagitan ng **Ulo ng Bloke** at **Merkle Proof** nag pagpapatunay. Nasaliksik ito at ipinatupad bilang “**Protokol na Magaan na Kliyente**”, na masidhing tinalakay sa komunidad ng [Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol), pinag-aralan at ipinatupad para sa [Cosmos inter-chain na komunikasyon](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
+Ang BC ay isang blockchain na nakabatay sa Tendermint at may kagyat na kawakasan. Ang mga Tagapagpatunay na may hindi bababa sa ⅔\*N+1 ng kabuuang kapangyarihan sa pagboto ay kasabay na mag pipirma ng bawat bloke sa kadena. Kaya't praktikal na patunayan ang mga transaksyon sa bloke at kahit ang halaga ng estado sa pamamagitan ng **Ulo ng Bloke** at **Patunay na Merkle** nag pagpapatunay. Nasaliksik ito at ipinatupad bilang “**Protokol na Magaan na Kliyente**”, na masidhing tinalakay sa komunidad ng [Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol), pinag-aralan at ipinatupad para sa [Cosmos inter-chain na komunikasyon](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
 
 Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na magbunsod ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
 
@@ -191,7 +191,7 @@ Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na m
     * bloke at app hash ng BC na napirmahan ng mga tagapagpatunay
     * kasalukuyang hanay ng mga tagapagpatunay, at pinakabagong hanay ng mga tagapagpatunay
 
-2. ang susi-halaga mula sa estado ng blockchain ay papatunayan batay sa Merkle Proof at impormasyon mula sa itaas #1.
+2. ang susi-halaga mula sa estado ng blockchain ay papatunayan batay sa Patunay na Merkle at impormasyon mula sa itaas #1.
 
 Matapos kumpirmahing na ang susi-halaga ay tumpak at mapagkakatiwalaan, ang build-in na mga sistemang kontrata ay isasagawa ang mga aksyon na naaayon sa mga cross-chain na pakete. Ang ilang mga halimbawa ng naturang mga pakete na maaaring likhain para sa BC-patungo-sa-BSC ay:
 
@@ -203,3 +203,26 @@ Matapos kumpirmahing na ang susi-halaga ay tumpak at mapagkakatiwalaan, ang buil
 Upang matiyak na walang pagkopya, tamang pagkakasunud-sunod ng mensahe at napapanahong pag-timeout, mayroong isang konseptong "Channel" na ipinakilala sa BC upang pangasiwaan ang anumang uri ng komunikasyon.
 
 Para sa mga tagahatid, mangyaring mag-refer din sa ibaba ng seksyong "Tagahatid".
+
+## BSC patungo sa BC na Arkitektura
+
+Gumagamit ang BSC ng Patunay ng Itinayang Awtoridad na protokol ng pagkakasunduan, na mayroong pagkakataon na magsanga at nangangailangan ng kumpirmasyon ng mas madaming mga bloke. Ang isang bloke ay mayroon lamang pirma ng isang tagapagpatunay, kaya't hindi madaling umasa sa isang bloke upang mapatunayan ang datos mula sa BSC.
+
+Upang ganap na samantalahin ang korum ng tagapagpatunay ng BC, isang ideyang katulad sa maraming [Tulay](https://github.com/poanetwork/poa-bridge) o Orakulong mga blockchain ang gagamitin:
+
+1. Ang mga kahilingan sa komunikasyon na cross-chain mula sa BSC ay isusumite at isinasagawa sa BSC bilang mga transaksyon. Ang pagsasagawa ng transanction ay magpapalabas ng `Events`, at ang mga naturang kaganapan ay maaaring sundin at ibalot sa ilang mga “**Orakulo**” papunta sa BC. Sa halip na Mga Ulo ng Bloke, Hash at Patunay na Merkle, ang ganitong uri ng "Orakulo" na pakete na direktang naglalaman ng impormasyong cross-chain para sa mga pagkilos, tulad ng nagpadala, tatanggap at halaga na ililipat.
+2. Upang matiyak ang seguridad ng Orakulo, ang mga nagpapatunay ng BC ay bubuo ng isa pang korum ng mga “**Orakulong Tagahatid**”. Ang bawat tagapagpatunay ng BC ay dapat magpatakbo ng isang **nakatuon na proseso** bilang Orakulong Tagahatid. Ang mga Orakulong Tagahatid na ito ay magsusumite at magboboto para sa cross-chain na pakete ng komunikasyon, tulad ng Orakulo, papunta sa BC, gamit ang parehong mga susi ng tagapagpatunay. Anumang pakete na nilagdaan ng higit sa ⅔\*N+1 na kapangyarihan ng pagboto ng mga Orakulong Tagahatid ay kasing ligtas ng anumang bloke na nilagdaan ng ⅔\*N+1 ng parehong kapangyarihan ng pagboto ng korum ng mga tagapagpatunay.
+
+Sa paggamit ng parehong korum ng tagapagpatunay, nilalagay nito ang kodigo ng magaan na kliyente sa BC at ang tuluy-tuloy na mga pagbabago ng bloke sa BC. Ang nasabing mga Orakulo ay mayroon ding mga Orakulo ID at uri, upang matiyak ang pagkakasunud-sunod at wastong pangangasiwa ng kamalian.
+
+## Pag-timeout at Pangangasiwa ng Kamalian
+
+May mga sitwasyon na hindi nagtatagumpay ang komunikasyon sa cross-chain. Halimbawa, ang hinatid na pakete ay hindi maaaring maipatupad sa BSC dahil sa ilang mga mali sa kodigo ng mga kontrata. **Ang pag-timeout at Pangangasiwa ng Kamalian na mga lohika** ay ginagamit sa mga nasabing senaryo.
+
+Para sa kilalang mga kamalian ng gumagamit at ng sistema o anumang inaasahang pagbubukod, dapat na pagalingin ng dalawang network ang kanilang sarili. Halimbawa, kapag nabigo ang paglipat galing sa BC papunta sa BSC, maglalabas ang BSC ng isang kaganapan sa kabiguan at ang mga Orakulong Tagahatid ay magsasagawa ng isang pagsasauli ng bayad sa BC; kapag nabigo ang paglipat galing sa BSC papunta sa BC, maglalabas ang BC ng isang pakete ng pagsasauli ng bayad para ihatid ng Tagahatid upang ma-unlock ang pondo.
+
+Gayunpaman, ang hindi inaasahang pagkakamali o pagbubukod ay maaari pa ring mangyari sa anumang hakbang ng cross-chain na komunikasyon. Sa ganitong kaso, matutuklasan ng Tagahatid at mga Orakulong Tagahatid na ang kaukulang cross-chain channel ay natigil sa isang partikular na pagkakasunud-sunod. Pagkatapos ng isang yugto ng Pag-timeout, ang mga Tagahatid at mga Orakulong Tagahatid ay maaaring humiling ng isang transaksyon na “SkipSequence”, ang natigil na pagkakasunud-sunod ay mamarkahan bilang "Hindi mapatakbo". Itataas ang isang kaukulang alerto, at kailangang talakayin ng komunidad kung paano pangangasiwaan ang senaryong ito, hal. ibalik ang bayad sa pamamagitan ng isponsor ng mga tagapagpatunay, o kahit na linisin ang pondo sa susunod na pagbago sa network.
+
+## Cross-Chain na Karanasan ng Gumagamit
+
+Mas mainam na ang mga gumagamit ay umaasang gagamit ng dalawang magkatulad na mga kadena sa parehong paraan tulad ng paggamit nila ng isang solong kadena. Nangangailangan ito ng mas madaming pinagsama-samang mga uri ng transaksyon upang maidagdag sa cross-chain na komunikasyon upang paganahin ito, na magdaragdag ng labis na pagkakumplikado, mahigpit na pagkakaugnay, at pagpapanatili na pasanin. Dito ipinapatupad lamang ng BC at BSC ang mga pangunahing operasyon upang paganahin ang daloy ng halaga sa paunang paglulunsad at iwanan ang karamihan ng trabaho sa karanasan ng gumagamit sa UI na panig ng kliyente, tulad ng mga pitaka. Hal. ang isang mahusay na pitaka ay maaaring payagan ang mga gumagamit na magbenta ng isang token nang direkta mula sa BSC papunta sa DEX order book ng BC, sa isang ligtas na paraan.
