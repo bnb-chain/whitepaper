@@ -18,7 +18,7 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [Iba Pang Mga Token](#iba-pang-mga-token)
 - [Cross-Chain na Paglipat at Komunikasyon](#cross-chain-na-paglipat-at-komunikasyon)
   * [Cross-Chain Transfer](#cross-chain-transfer)
-  * [BC to BSC Architecture](#bc-to-bsc-architecture)
+  * [BC Patungo sa BSC Architecture](#bc-patungo-sa-bsc-architecture)
   * [BSC to BC Architecture](#bsc-to-bc-architecture)
   * [Timeout and Error Handling](#timeout-and-error-handling)
   * [Cross-Chain User Experience](#cross-chain-user-experience)
@@ -171,7 +171,7 @@ Ang cross-chain na paglipat ay ang pangunahing komunikasyon sa pagitan ng dalawa
 1. ang `transfer-out` blockchain ay ikakandado ang halaga mula sa mga address ng may-ari ng pinagmulan sa isang kinokontrol ng sistema na address/mga kontrata;
 2. ang `transfer-in` blockchain ay bubuksan ang halaga mula sa kinokontrol ng sistema na address/ mga kontrata at ipadala ito sa mga target na address.
 
-Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Oracle na mga Tagahatid** na i-verify:
+Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Oracle na mga Tagahatid** na patunayan:
 
 1. Sapat na halaga ng mga token assets ay inalis mula sa pinagmulang address at naka-lock sa isang kontrolado ng sistema na mga address/mga kontrata sa pinagmulang blockchain. At maaaring makumpirma ito sa target na blockchain.
 2. Ang mga wastong halaga ng mga token na assets ay inilabas mula sa kontrolado ng sistema na mga address/mga kontrata at inilalaan sa mga target na address sa target na blockchain. Kung nabigo ito, makukumpirma ito sa pinagmulang blockchain, upang ang naka-lock na token ay maaaring mailabas pabalik (maaaring ibawas ang mga bayarin).
@@ -180,3 +180,26 @@ Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC
 ![cross-chain](./assets/cross-chain.png)
 
 Ang arkitektura ng cross-chain na komunikasyon ay tulad ng nasa itaas na diagram. Upang mapaunlakan ang 2 mga heteroid na sistema, ang paghawak ng komunikasyon ay magkakaiba sa bawat direksyon.
+
+## BC Patungo sa BSC Architecture
+
+Ang BC ay isang blockchain na nakabatay sa Tendermint at may kagyat na kawakasan. Ang mga Tagapagpatunay na may hindi bababa sa ⅔\*N+1 ng kabuuang kapangyarihan sa pagboto ay kasabay na mag pipirma ng bawat bloke sa kadena. Kaya't praktikal na patunayan ang mga transaksyon sa bloke at kahit ang halaga ng estado sa pamamagitan ng **Ulo ng Bloke** at **Merkle Proof** nag pagpapatunay. Nasaliksik ito at ipinatupad bilang “**Protokol na Magaan na Kliyente**”, na masidhing tinalakay sa komunidad ng [Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol), pinag-aralan at ipinatupad para sa [Cosmos inter-chain na komunikasyon](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
+
+Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na magbunsod ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
+
+1. Ang estado sa pag-bloke ng BC ay isisink sa mga magaan na kliyente na kontrata sa BSC paminsan-minsan, sa pamamagitan ng ulo ng bloke at paunang mga komit, para sa mga impormasyon sa ibaba:
+    * bloke at app hash ng BC na napirmahan ng mga tagapagpatunay
+    * kasalukuyang hanay ng mga tagapagpatunay, at pinakabagong hanay ng mga tagapagpatunay
+
+2. ang susi-halaga mula sa estado ng blockchain ay papatunayan batay sa Merkle Proof at impormasyon mula sa itaas #1.
+
+Matapos kumpirmahing na ang susi-halaga ay tumpak at mapagkakatiwalaan, ang build-in na mga sistemang kontrata ay isasagawa ang mga aksyon na naaayon sa mga cross-chain na pakete. Ang ilang mga halimbawa ng naturang mga pakete na maaaring likhain para sa BC-patungo-sa-BSC ay:
+
+1. Bind: ibigkis ang mga token ng BEP2 at BEP2E
+2. Paglipat: paglipat ng mga token pagkatapos ng pagbigkis, nangangahulugan ito na ang sirkulasyon ay bababa (mai-lock) mula sa BC at lilitaw sa balanse ng target na address sa BSC
+3. Pangangasiwa ng Kamalian: upang hawakan ang anumang kaganapan sa pag-timeout/pagkabigo para sa komunikasyon ng BSC-patungo-sa-BC
+4. Pinakabagong hanay ng mga tagapagpatunay ng BSC
+
+Upang matiyak na walang pagkopya, tamang pagkakasunud-sunod ng mensahe at napapanahong pag-timeout, mayroong isang konseptong "Channel" na ipinakilala sa BC upang pangasiwaan ang anumang uri ng komunikasyon.
+
+Para sa mga tagahatid, mangyaring mag-refer din sa ibaba ng seksyong "Tagahatid".
