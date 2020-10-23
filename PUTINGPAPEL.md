@@ -22,7 +22,7 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [BSC patungo sa BC na Arkitektura](#bsc-patungo-sa-bc-na-arkitektura)
   * [Pag-timeout at Pangangasiwa ng Kamalian](#pag-timeout-at-pangangasiwa-ng-kamalian)
   * [Cross-Chain na Karanasan ng Gumagamit](#cross-chain-na-karanasan-ng-gumagamit)
-  * [Cross-Chain Contract Event](#cross-chain-contract-event)
+  * [Kaganapan sa Kontrata ng Cross-Chain](#kaganapan-sa-kontrata-ng-cross-chain)
 - [Pagtaya at Pamamahala](#pagtaya-at-pamamahala)
   * [Staking on BC](#staking-on-bc)
   * [Rewarding](#rewarding)
@@ -118,9 +118,9 @@ Ang BNB ay tatakbo sa BSC sa parehong paraan tulad ng ETH na tumatakbo sa Ethere
 
 ### Pondong Binhi
 
-Ang ilang mga halaga ng BNB ay susunugin sa BC at huhulmahin sa BSC sa yugto ng genesis. Ang halagang ito ay tinatawag na "Pondong Binhi" upang mag-ikot sa BSC pagkatapos ng unang bloke, na ipapadala sa paunang BC-patungo-sa-BSC na Tagahatid (inilarawan sa mga susunod na seksyon) at paunang itinakdang hanay ng tagapagpatunay na ipinakilala sa genesis. Ang mga BNB na ito ay ginagamit upang magbayad ng mga bayarin sa transaksyon habang maaga upang ilipat ang mas madaming BNB mula sa BC papunta sa BSC sa pamamagitan ng mekanismo ng cross-chain.
+Ang ilang mga halaga ng BNB ay susunugin sa BC at huhulmahin sa BSC sa yugto ng genesis. Ang halagang ito ay tinatawag na "Pondong Binhi" upang mag-ikot sa BSC pagkatapos ng unang bloke, na ipapadala sa paunang BC-patungo-sa-BSC na Tagahatid (inilarawan sa mga susunod na seksyon) at paunang itinakdang hanay ng tagapagpatunay na ipinakilala sa genesis. Ang mga BNB na ito ay ginagamit upang magbayad ng mga bayarin sa transaksyon habang maaga upang ilipat ang mas madaming BNB mula sa BC patungo sa BSC sa pamamagitan ng mekanismo ng cross-chain.
 
-Ang BNB cross-chain transfer ay tinalakay sa isang susunod na seksyon, ngunit para sa paglipat mula sa BC patungong BSC, sa pangkalahatan ito ay upang i-lock ang BNB sa BC mula sa pinagmulang address ng paglipat sa isang address na kontrolado ng sistema at i-unlock ang kaukulang halaga mula sa espesyal na kontrata papunta sa target na address ng paglipat sa BSC, o sa kabaligtaran, kapag ililipat mula sa BSC patungong BC, ito ay upang i-lock ang BNB mula sa pinagmulang address sa BSC patungo sa isang espesyal na kontrata at palabasin ang naka-lock na halaga sa BC mula sa address ng system patungo sa target na address. Ang lohika ay nauugnay sa katutubong kodigo sa BC at isang serye ng mga matalinong kontrata sa BSC.
+Ang BNB cross-chain na paglipat ay tinalakay sa isang susunod na seksyon, ngunit para sa paglipat mula sa BC patungong BSC, sa pangkalahatan ito ay upang i-lock ang BNB sa BC mula sa pinagmulang address ng paglipat sa isang address na kontrolado ng sistema at i-unlock ang kaukulang halaga mula sa espesyal na kontrata papunta sa target na address ng paglipat sa BSC, o sa kabaligtaran, kapag ililipat mula sa BSC patungong BC, ito ay upang i-lock ang BNB mula sa pinagmulang address sa BSC patungo sa isang espesyal na kontrata at palabasin ang naka-lock na halaga sa BC mula sa address ng system patungo sa target na address. Ang lohika ay nauugnay sa katutubong kodigo sa BC at isang serye ng mga matalinong kontrata sa BSC.
 
 ## Iba Pang Mga Token
 
@@ -185,7 +185,7 @@ Ang arkitektura ng cross-chain na komunikasyon ay tulad ng nasa itaas na diagram
 
 Ang BC ay isang blockchain na nakabatay sa Tendermint at may kagyat na kawakasan. Ang mga Tagapagpatunay na may hindi bababa sa ⅔\*N+1 ng kabuuang kapangyarihan sa pagboto ay kasabay na mag pipirma ng bawat bloke sa kadena. Kaya't praktikal na patunayan ang mga transaksyon sa bloke at kahit ang halaga ng estado sa pamamagitan ng **Ulo ng Bloke** at **Patunay na Merkle** nag pagpapatunay. Nasaliksik ito at ipinatupad bilang “**Protokol na Magaan na Kliyente**”, na masidhing tinalakay sa komunidad ng [Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol), pinag-aralan at ipinatupad para sa [Cosmos inter-chain na komunikasyon](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
 
-Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na magbunsod ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
+Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na magpalitaw ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
 
 1. Ang estado sa pag-bloke ng BC ay isisink sa mga magaan na kliyente na kontrata sa BSC paminsan-minsan, sa pamamagitan ng ulo ng bloke at paunang mga komit, para sa mga impormasyon sa ibaba:
     * bloke at app hash ng BC na napirmahan ng mga tagapagpatunay
@@ -219,10 +219,36 @@ Sa paggamit ng parehong korum ng tagapagpatunay, nilalagay nito ang kodigo ng ma
 
 May mga sitwasyon na hindi nagtatagumpay ang komunikasyon sa cross-chain. Halimbawa, ang hinatid na pakete ay hindi maaaring maipatupad sa BSC dahil sa ilang mga mali sa kodigo ng mga kontrata. **Ang pag-timeout at Pangangasiwa ng Kamalian na mga lohika** ay ginagamit sa mga nasabing senaryo.
 
-Para sa kilalang mga kamalian ng gumagamit at ng sistema o anumang inaasahang pagbubukod, dapat na pagalingin ng dalawang network ang kanilang sarili. Halimbawa, kapag nabigo ang paglipat galing sa BC papunta sa BSC, maglalabas ang BSC ng isang kaganapan sa kabiguan at ang mga Orakulong Tagahatid ay magsasagawa ng isang pagsasauli ng bayad sa BC; kapag nabigo ang paglipat galing sa BSC papunta sa BC, maglalabas ang BC ng isang pakete ng pagsasauli ng bayad para ihatid ng Tagahatid upang ma-unlock ang pondo.
+Para sa kilalang mga kamalian ng gumagamit at ng sistema o anumang inaasahang pagbubukod, dapat na pagalingin ng dalawang network ang kanilang sarili. Halimbawa, kapag nabigo ang paglipat galing sa BC patungo sa BSC, maglalabas ang BSC ng isang kaganapan sa kabiguan at ang mga Orakulong Tagahatid ay magsasagawa ng isang pagsasauli ng bayad sa BC; kapag nabigo ang paglipat galing sa BSC patungo sa BC, maglalabas ang BC ng isang pakete ng pagsasauli ng bayad para ihatid ng Tagahatid upang ma-unlock ang pondo.
 
 Gayunpaman, ang hindi inaasahang pagkakamali o pagbubukod ay maaari pa ring mangyari sa anumang hakbang ng cross-chain na komunikasyon. Sa ganitong kaso, matutuklasan ng Tagahatid at mga Orakulong Tagahatid na ang kaukulang cross-chain channel ay natigil sa isang partikular na pagkakasunud-sunod. Pagkatapos ng isang yugto ng Pag-timeout, ang mga Tagahatid at mga Orakulong Tagahatid ay maaaring humiling ng isang transaksyon na “SkipSequence”, ang natigil na pagkakasunud-sunod ay mamarkahan bilang "Hindi mapatakbo". Itataas ang isang kaukulang alerto, at kailangang talakayin ng komunidad kung paano pangangasiwaan ang senaryong ito, hal. ibalik ang bayad sa pamamagitan ng isponsor ng mga tagapagpatunay, o kahit na linisin ang pondo sa susunod na pagbago sa network.
 
 ## Cross-Chain na Karanasan ng Gumagamit
 
 Mas mainam na ang mga gumagamit ay umaasang gagamit ng dalawang magkatulad na mga kadena sa parehong paraan tulad ng paggamit nila ng isang solong kadena. Nangangailangan ito ng mas madaming pinagsama-samang mga uri ng transaksyon upang maidagdag sa cross-chain na komunikasyon upang paganahin ito, na magdaragdag ng labis na pagkakumplikado, mahigpit na pagkakaugnay, at pagpapanatili na pasanin. Dito ipinapatupad lamang ng BC at BSC ang mga pangunahing operasyon upang paganahin ang daloy ng halaga sa paunang paglulunsad at iwanan ang karamihan ng trabaho sa karanasan ng gumagamit sa UI na panig ng kliyente, tulad ng mga pitaka. Hal. ang isang mahusay na pitaka ay maaaring payagan ang mga gumagamit na magbenta ng isang token nang direkta mula sa BSC papunta sa DEX order book ng BC, sa isang ligtas na paraan.
+
+## Kaganapan sa Kontrata ng Cross-Chain
+
+Ang Kaganapan sa Kontrata ng Cross-Chain (CCCE) ay idinisenyo upang payagan ang isang matalinong kontrata na magpalitaw ng mga cross-chain na transaksyon, direkta sa pamamagitan ng kodigo ng kontrata. Nagiging posible ito batay sa:
+
+1. Ang karaniwang mga sistemang kontrata ay maaaring ibigay upang maghatid ng mga operasyon na maaaring tawagin ng pangkalahatang matalinong mga kontrata;
+2. Ang karaniwang mga kaganapan ay maaaring mailabas ng karaniwang mga kontrata;
+3. Ang mga Orakulong Tagahatid ay maaaring makuha ang karaniwang mga kaganapan, at mapalitaw ang kaukulang mga operasyon ng cross-chain;
+4. Ang nakatuon na address na pinangangasiwaan ng kodigo (account) ay maaaring likhain sa BC at mai-access ng mga kontrata sa BSC, dito pinangalanan bilang **Address ng Kontrata sa BC” (CAoB)**.
+
+Maraming karaniwang pagpapatakbo ang ipinatupad:
+
+1. BSC patungo sa BC na paglipat: ipinatupad ito sa parehong paraan tulad ng normal na BSC patungo sa BC na paglipat, nagpapalitaw lamang sa pamamagitan ng karaniwang kontrata. Ang pondo ay maaaring ilipat sa anumang address sa BC, kabilang ang kaukulang CAoB ng kontrata na pinagmulan ng paglipat.
+2. Paglipat sa BC: ipinapatupad ito bilang isang espesyal na cross-chain na paglipat, habang ang totoong paglipat ay mula sa **CAoB** papunta sa anumang iba pang address (kahit na isa pang CAoB).
+3. BC patungo sa BSC na paglipat: ipinatutupad ito bilang dalawang-pass na cross-chain na komunikasyon. Ang una ay pinalitaw ng kontrata ng BSC at pinalaganap sa BC, at pagkatapos ay sa pangalawang pass, magsisimula ang BC ng isang normal na BC patungo sa BSC cross-chain na paglipat, mula sa **CAoB** hanggang sa address ng kontrata sa BSC. Ang isang espesyal na tala ay dapat bayaran na ang kontrata ng BSC ay nagdaragdag lamang ng balanse sa anumang paglipat na papasok sa pangalawang pass, at ang pangangasiwa ng kamalian sa pangalawang pass ay kapareho ng normal na BC patungo sa BSC na paglipat.
+4. IOC (Agaran-O-Kanselahin) na Kalakalan Palabas: ang pangunahing layunin ng paglilipat ng mga assets sa BC ay ang makipagkalakalan. Ang kaganapan na ito ay magtuturo upang ipagpalit ang isang tiyak na halaga ng isang asset sa CAoB sa isa pang pag-aari hangga't maaari at ilipat palabas ang lahat ng mga resulta, ibig sabihin, naiwan ang mapagkukunan at mga ipinalit na target na token ng kalakalan, pabalik sa BSC. Hahawakan ng BC ang mga nasabing hinatid na kaganapan sa pamamagitan ng pagpapadala ng isang "Agaran-O-Kanselahin", ibig sabihin, IOC na utos sa mga pares ng pangangalakal, sa sandaling ang susunod na pagtutugma ay natapos, ang resulta ay maihahatid pabalik sa BSC, na maaaring nasa alinman sa isa o dalawang mga pag-aari.
+5. Subasta na Kalakalan Palabas: Ang naturang kaganapan ay magtuturo sa BC na magpadala ng isang subasta na utos upang ipagpalit ang isang tiyak na halaga ng isang asset sa **CAoB** sa isa pang pag-aari hangga't maaari at ilipat palabas ang lahat ng mga resulta pabalik sa BSC sa pagtatapos ng subasta Paparating ang pagpapaandar sa subasta sa BC.
+
+Mayroong ilang mga detalye para sa Kalakalan Palabas:
+
+1. kapwa maaaring magkaroon ng isang limitasyong presyo (ganap o naaayon) para sa kalakal;
+2. ang huling resulta ay isusulat bilang mga cross-chain na pakete upang maihatid pabalik sa BSC;
+3. ang mga bayarin sa komunikasyon na cross-chain ay maaaring singilin mula sa asset na inilipat pabalik sa BSC;
+4. ang kontrata ng BSC ay nagpapanatili ng isang salamin ng balanse at natitirang mga order sa CAoB. Hindi alintana kung anumang kamalian ang mangyari sa panahon ng Kalakalan Palabas, ang huling katayuan ay ikakalat pabalik sa pinagmulan na kontrata at linisin ang panloob na estado.
+
+Sa mga katangian sa itaas, nagdaragdag lamang ito ng cross-chain na paglipat at mga kakayahan na maglipat na may mataas na liquidity sa lahat ng mga matalinong kontrata sa BSC. Lalo nitong idaragdag ang mga sitwasyon ng aplikasyon sa Matalinong Kontrata at dApps, at gagawing 1 chain +1 chain > 2 chain.
