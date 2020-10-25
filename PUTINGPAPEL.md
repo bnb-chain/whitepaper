@@ -342,3 +342,18 @@ Dapat maghintay ang Orakulong Tagahatid para sa sapat na mga bloke upang kumpirm
 Ang mga bayarin sa cross-chain ay ibabahagi sa mga tagapagpatunay ng BC kasama ang normal na mga gantimpala sa pag-bloke sa BC.
 
 Ang nasabing orakulong uri ng paghatid ay nakasalalay sa lahat ng mga tagapagpatunay na suportahan. Dahil ang lahat ng mga boto para sa mga pakete ng cross-chain na komunikasyon ay naitala sa blockchain, hindi mahirap magkaroon ng isang panukat na sistema upang masuri ang kakayahan sa pagganap ng mga Orakulong Tagahatid. Ang pinakamahinang tagaganap ay maaaring ang kanilang mga gantimpala ay kalmutin pabalik sa pamamagitan ng isa pang Pagbawas na lohika na ipinakilala sa hinaharap.
+
+# Pananaw
+
+Mahirap magtapos para sa Binance Chain, dahil hindi ito tumitigil sa pag-unlad. Ang diskarte sa dalawahang kadena ay upang buksan ang pintuan para sa mga gumagamit upang samantalahin ang mabilis na paglilipat at pakikipagkalakalan sa isang panig, at may kakayahang umangkop at napapalawak na pag-program sa kabilang panig, ngunit ito ay magiging isang hintuan sa pagbuo ng Binance Chain. Nasa ibaba ang mga paksang maaaring tingnan upang mas mapadali ang komunidad para sa mas higit pa na kakayahang magamit at mapalawak:
+
+1. Magdagdag ng iba't ibang modelo ng digital na asset para sa iba't ibang mga kaso ng paggamit sa negosyo
+2. Paganahin ang mas marami pang pinagkukunan ng mga datos, lalo na ang mga datos ng merkado ng DEX, na ipaparating mula sa Binance DEX patungo sa BSC
+3. Magbigay ng interface at pagiging tugma upang ma-integrate sa Ethereum, kasama ang karagdagang pagsulong, at iba pang blockchain
+4. Pagbutihin ang karanasan sa panig ng kliyente sa pangangasiwa ng mga pitaka at sa mas madaling paggamit ng blockchain
+
+
+
+------
+
+[1]: Ang mga propesyonal sa negosyo sa BNB ay maaaring magbigay ng iba pang mga benepisyo para sa mga delegado ng BNB, tulad ng ginagawa nila ngayon para sa mga pangmatagalang may hawak ng BNB.
