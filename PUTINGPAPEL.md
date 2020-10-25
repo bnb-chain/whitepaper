@@ -10,7 +10,7 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
 - [Mga Prinsipyo ng Disenyo](#mga-prinsipyo-ng-disenyo)
 - [Pagkakasunduan at Korum ng mga Tagapagpatunay](#pagkakasunduan-at-korum-ng-mga-tagapagpatunay)
   * [Patunay ng Itinayang Awtoridad](#patunay-ng-itinayang-awtoridad)
-  * [Korum ng mga Tagapagpatunay](#korum-ng-mga-tagapagpatunay)
+  * [Korum ng Tagapagpatunay](#korum-ng-tagapagpatunay)
   * [Seguridad at Kawakasan](#seguridad-at-kawakasan)
   * [Gantimpala](#gantimpala)
 - [Ekonomiya ng Token](#ekonomiya-ng-token)
@@ -24,9 +24,9 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [Cross-Chain na Karanasan ng Gumagamit](#cross-chain-na-karanasan-ng-gumagamit)
   * [Kaganapan sa Kontrata ng Cross-Chain](#kaganapan-sa-kontrata-ng-cross-chain)
 - [Pagtaya at Pamamahala](#pagtaya-at-pamamahala)
-  * [Staking on BC](#staking-on-bc)
-  * [Rewarding](#rewarding)
-  * [Slashing](#slashing)
+  * [Pagtaya sa BC](#pagtaya-sa-bc)
+  * [Paggantimpala](#paggantimpala)
+  * [Pagbawas](#pagbawas)
 - [Tagahatid](#tagahatid)
   * [BSC Relayers](#bsc-relayers)
   * [Mga Orakulong Tagahatid](#mga-orakulong-tagahatid)
@@ -38,9 +38,9 @@ Matapos ang [paglunsad](https://www.binance.com/en/blog/327334696200323072/Binan
 
 Ang kakayahang umangkop at kakayahang magamit ay kadalasang may kabaligtarang relasyon sa kakayahang pagganap. Ang pagtutok sa pagbibigay ng isang madaling paraan ng pagkakaloob ng mga digital na asset at lugar ng pangangalakal ay nagdudulot din ng mga limitasyon. Ang pinakahinahanap na abilidad ng Binance Chain ay ang programmable na kakayahan nito na mai-extend, o sa madaling salita ang [Matalinong Kontrata](https://en.wikipedia.org/wiki/Smart_contract) at Virtual Machine na mga kakayahan. Ang mga tagapagbigay ng mga digital na asset at mga nagmamay-ari nito ay nahihirapan sa pagdagdag ng mga bagong disentralisadong kakayahan para sa kanilang mga assets o magpakilala ng anumang uri ng pamamahala at mga aktibidad sa kanilang komunidad.
 
-Sa kabila ng mataas na pangangailangan na ito para sa paglagay ng Matalinong Kontrata na kakayahan sa Binance Chain, isa itong mahirap na desisyon. Ang pagtakbo ng isang Matalinong Kontrata ay maaaring makapagpabagal ng kalakalan at magdagdag ng mga mahirap matukoy na aspeto sa pangangalakal. Kung kayang tiisin ang kompromiso na iyon, maaaring maging isang deretsong ideya ang ipakilala ang isang bagong Virtual Machine na may mga katangian na batay sa [Tendermint](https://tendermint.com/core/), batay sa kasalukuyang protokol ng pagkakasunduan at sa pangunahing pagpapatakbo ng [RPC](https://docs.binance.org/api-reference/node-rpc.html) ng Binance Chain. Ngunit ang lahat ng ito ay magpapataas ng mga kinakailangan sa pag-aaral ng lahat ng mga aktibong mga komunidad ng dApp, at maaring hindi masyadong malugod na tanggapin.
+Sa kabila ng mataas na pangangailangan na ito para sa paglagay ng Matalinong Kontrata na kakayahan sa Binance Chain, isa itong mahirap na desisyon. Ang pagtakbo ng isang Matalinong Kontrata ay maaaring makapagpabagal ng kalakalan at magdagdag ng mga hindi matukoy na aspeto sa pangangalakal. Kung kayang tiisin ang kompromiso na iyon, maaaring maging isang deretsong ideya ang ipakilala ang isang bagong Virtual Machine na may mga katangian na batay sa [Tendermint](https://tendermint.com/core/), batay sa kasalukuyang protokol ng pagkakasunduan at sa pangunahing pagpapatakbo ng [RPC](https://docs.binance.org/api-reference/node-rpc.html) ng Binance Chain. Ngunit ang lahat ng ito ay magpapataas ng mga kinakailangan sa pag-aaral ng lahat ng mga aktibong mga komunidad ng dApp, at maaring hindi masyadong malugod na tanggapin.
 
-Ipinapanukala namin ang isang kahanay na blockchain ng kasalukuyang Binance Chain upang mapanatili ang mataas na kakayahan sa pagganap ng katutubong DEX blockchain habang suportado ang isang madaling gamitin na Matalinong Kontrata na kakayahan.
+Ipinapanukala namin ang isang kahanay na blockchain ng kasalukuyang Binance Chain upang mapanatili ang mataas na kakayahang pagganap ng katutubong DEX blockchain habang suportado ang isang madaling gamitin na Matalinong Kontrata na kakayahan.
 
 # Mga Prinsipyo ng Disenyo
 
@@ -50,8 +50,8 @@ Narito ang mga prinsipyo ng disenyo ng **BSC**:
 
 1. **Malayang Blockchain**: sa panteknikal na salita, ang BSC ay isang nagsasariling blockchain, sa halip na isang layer-2 na solusyon. Karamihan sa mga pangunahing kakayahan ng BSC na panteknikal at pang-negosyo ay dapat na umiiral sa loob ng sarili niya upang maaari pa rin itong tumakbo nang maayos kahit na huminto pansamantala ang BC ng maikling panahon.
 2. **Pagkatugma sa Ethereum**: Ang unang praktikal at malawak na ginagamit na platform para sa Matalinong Kontrata ay ang Ethereum. Upang samantalahin ang medyo maunlad na mga aplikasyon at komunidad nito, pinili ng BSC na maging katugma sa umiiral na Ethereum mainnet. Nangangahulugan ito na ang karamihan sa **dApps**, mga bahagi ng ecosystem, at mga iba't ibang kasangkapan ay gagana sa BSC at mangangailangan ng wala o kaunti lamang na mga pagbabago; Mangangailangan ang BSC node ng katulad (o medyo mas mataas) na katangian ng hardware at kakayahan upang tumakbo at mapatakbo. Ang ganitong pagpapatupad ay dapat mag-iwan ng lugar para sa BSC na makahabol sa karagdagang mga pagsulong ng Ethereum.
-3. **Pagtaya na Kaakibat sa Pagkakasundo at Pamamahala**: Ang pagkakasundo na nakabase sa Pagtaya ay mas mainam sa kapaligiran at nag-iiwan ng mas may kakayahang umangkop na pamamaraan sa pamamahala ng komunidad. Inaasahan, ang ganitong uri ng pakakasundo ay kayang magbigay ng mas mahusay na pagtakbo ng network sa [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) na sistema ng blockchain, hal. mabilis na oras ng pagbuo ng bloke at mas mataas na kapasidad sa transaksyon.
-4. **Katutubong na Komunikasyon na Cross-Chain**: ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa komunikasyon na cross-chain sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga token na BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lamang.
+3. **Pagtaya na Kaakibat sa Pagkakasundo at Pamamahala**: Ang pagkakasundo na nakabase sa Pagtaya ay mas mainam sa kapaligiran at nag-iiwan ng mas may kakayahang umangkop na pamamaraan sa pamamahala ng komunidad. Inaasahan, ang ganitong uri ng pakakasundo ay kayang magbigay ng mas mahusay na kakayahang pagganap ng network sa [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) na sistema ng blockchain, hal. mabilis na oras ng pagbuo ng bloke at mas mataas na kapasidad sa transaksyon.
+4. **Katutubong na Cross-Chain na Komunikasyon**: ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa cross-chain na komunikasyon sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga token na BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lamang.
 
 # Pagkakasunduan at Korum ng mga Tagapagpatunay
 
@@ -60,7 +60,7 @@ Batay sa mga prinsipyo ng disenyo sa itaas, ang protokol ng pagkakasunduan ng BS
 1. Ang oras ng pag gawa ng bloke ay dapat na mas maikli kaysa sa Ethereum network, hal. 5 segundo lamang o mas maikli pa.
 2. Nangangailangan ito ng limitadong oras upang kumpirmahin ang kawakasan ng mga transaksyon, hal. hanggang sa isang minuto o mas maikli pa.
 3. Walang implasyon ng katutubong token: BNB, ang gantimpala ng bloke ay nakolekta mula sa mga bayarin sa transaksyon, at babayaran ito gamit ang BNB.
-4. Ito ay nagkakasundo sa Ethereum system hangga't maaari.
+4. Ito ay nagkakasundo sa sistema ng Ethereum hangga't maaari.
 5. Pinapayagan nito ang modernong [patunay-ng-taya](https://en.wikipedia.org/wiki/Proof_of_stake) na pamamahala sa blockchain network.
 
 ## Patunay ng Itinayang Awtoridad
@@ -76,7 +76,7 @@ Iminumungkahi ng BSC na pagsamahin ang DPoS at PoA para sa pagkakasunduan, upang
 2. Nagpapalit-palitan ang mga tagapagpatunay upang makabuo ng mga bloke sa pamamaraan ng PoA, katulad sa disenyo ng pagkakasunduan ng [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225)
 3. Ang hanay ng tagapagpatunay ay inihalal sa loob at labas batay sa isang pamamahalang nakabatay sa pagtaya
 
-## Korum ng mga Tagapagpatunay
+## Korum ng Tagapagpatunay
 
 Sa yugto ng genesis, ang ilang mga pinagkakatiwalaang node ay tatakbo bilang paunang Hanay ng Tagapagpatunay. Matapos magsimula ang pag gawa ng bloke, ang sinuman ay maaaring makipagkumpitensya upang sumali bilang mga kandidato sa pagiging isang tagapagpatunay. Ang istado ng pagtaya ay magpapasiya sa nangungunang 21 pinaka tinayaang node na maging susunod na hanay ng tagapagpatunay, at ang gayong halalan ay uulitin bawat 24 na oras.
 
@@ -90,7 +90,7 @@ Habang gumagawa ng karagdagang mga bloke, susuriin ng umiiral na mga tagapagpatu
 
 Dahil mayroong higit sa ½\*N+1 na mga tagapagpatunay na matapat, ang mga network na nakabatay sa PoA ay karaniwang gumagana nang ligtas at maayos. Gayunpaman, may mga kaso pa rin kung saan ilang tagapagpatunay ng Byzantine ay maaari pa ring magawang atakein ang network, hal. sa pamamagitan ng “[Clone na Atake](https://arxiv.org/pdf/1902.10244.pdf)”. Upang maging kasing ligtas ng BC, hinihimok ang mga gumagamit ng BSC na maghintay hanggang sa makatanggap ng mga bloke na tinatakan ng higit sa ⅔\*N+1 magkakaibang mga tagapagpatunay. Sa ganoong paraan, ang BSC ay mapagkakatiwalaan sa katulad na antas ng seguridad sa BC at maaaring tiisin ang mas mababa sa ⅓\*N na mga tagapagpatunay ng Byzantine.
 
-Sa 21 mga tagapagpatunay, kung ang oras ng bloke ay 5 segundo, ang ⅔\*N+1 na magkakaibang mga tatak ng tagapagpatunay ay mangangailangan ng haba ng oras na (⅔\*21+1)*5 = 75 segundo. Anumang mga kritikal na aplikasyon para sa BSC ay maaaring maghintay ng ⅔\*N+1 upang matiyak ang isang ligtas na kawakasan. Gayunpaman, bukod sa naturang pagkakaayos, ang BSC ay nagpapakilala ng **Pagbawas** na lohika upang maparusahan ang mga tagapagpatunay ng Byzantine para sa **doble na pagpirma** o **hindi magagamit**, na tatalakayin sa seksyong “Pagtaya at Pamamahala” mamaya. Ang Pagbawas na lohika na ito ay ilalantad ang mga may masamang hangarin na tagapagpatunay sa isang napakaikling panahon at gagawin ang “Clone na Atake” na napakahirap o labis na hindi kapaki-pakinabang upang maipatupad. Sa pagpapahusay na ito, ang ½\*N+1 o kahit na mas kaunting mga bloke ay sapat na bilang kumpirmasyon para sa karamihan ng mga transaksyon.
+Sa 21 mga tagapagpatunay, kung ang oras ng bloke ay 5 segundo, ang ⅔\*N+1 na magkakaibang mga tatak ng tagapagpatunay ay mangangailangan ng haba ng oras na (⅔\*21+1)*5 = 75 segundo. Anumang mga kritikal na aplikasyon para sa BSC ay maaaring maghintay ng ⅔\*N+1 upang matiyak ang isang ligtas na kawakasan. Gayunpaman, bukod sa naturang pagkakaayos, ang BSC ay nagpapakilala ng **Pagbawas** na lohika upang maparusahan ang mga tagapagpatunay ng Byzantine para sa **dobleng pagpirma** o **hindi nagagamit**, na tatalakayin sa seksyong “Pagtaya at Pamamahala” mamaya. Ang Pagbawas na lohika na ito ay ilalantad ang mga may masamang hangarin na tagapagpatunay sa isang napakaikling panahon at gagawin ang “Clone na Atake” na napakahirap o labis na hindi kapaki-pakinabang upang maipatupad. Sa pagpapahusay na ito, ang ½\*N+1 o kahit na mas kaunting mga bloke ay sapat na bilang kumpirmasyon para sa karamihan ng mga transaksyon.
 
 ## Gantimpala
 
@@ -98,13 +98,13 @@ Lahat ng mga tagapagpatunay ng BSC sa kasalukuyang hanay ng tagapagpatunay ay ga
 
 Ang gantimpala para sa mga tagapagpatunay ay ang mga bayarin na nakolekta mula sa mga transaksyon sa bawat bloke. Maaaring magpasya ang mga tagapagpatunay kung magkano ang ibabalik sa mga delegado na tumaya sa kanila ng kanilang BNB, upang makaakit ng mas madaming taya. Ang bawat tagapagpatunay ay magpapalitan upang makabuo ng mga bloke sa parehong posibilidad (kung mananatili sila sa 100% na pagka aktibo), sa gayon, sa pangmatagalan, ang lahat ng mga matatag na tagapagpatunay ay maaaring makakuha ng magkakatulad na laki ng gantimpala. Samantala, ang mga taya sa bawat tagapagpatunay ay maaaring magkakaiba, kaya nagdadala ito ng isang kontra-intuitive na sitwasyon na mas madaming mga gumagamit ang nagtitiwala at naglalaan sa isang tagapagpatunay, maaaring makakuha sila ng mas kaunting gantimpala. Kaya't ang mga makatuwiran na delegado ay may posibilidad na magtalaga sa isa na may mas kaunting taya hangga't ang tagapagpatunay ay mapagkakatiwalaan pa rin (ang walang katiyakan na tagapagpatunay ay maaaring magdala ng peligro na pagbawas). Sa huli, ang mga taya sa lahat ng mga tagapagpatunay ay magkakaroon ng mas kaunting pagkakaiba-iba. Ito ay talagang pipigilan ang konsentrasyon ng taya at ang “nanalo ay mananalo palagi” na problemang nakikita sa ilang iba pang mga network.
 
-Ang ilang mga bahagi ng bayad sa gas ay igagantimpala din sa mga tagahatid para sa komunikasyon na Cross-Chain. Mangyaring mag-refer sa seksyong “[Tagahatid](#tagahatid)” sa ibaba.
+Ang ilang mga bahagi ng bayad sa gas ay igagantimpala din sa mga tagahatid para sa Cross-Chain na komunikasyon. Mangyaring mag-refer sa seksyong “[Tagahatid](#tagahatid)” sa ibaba.
 
 # Ekonomiya ng Token
 
 Ang BC at BSC ay naghahati sa parehong sandaigdig ng token para sa mga token na BNB at BEP2. Tinutukoy nito:
 
-1. Ang parehong token ay maaaring umikot sa dalawang network, at dumadaloy sa pagitan ng mga ito ng magkabilaang direksyon sa pamamagitan ng mekanismo ng komunikasyon na cross-chain.
+1. Ang parehong token ay maaaring umikot sa dalawang network, at dumadaloy sa pagitan ng mga ito ng magkabilaang direksyon sa pamamagitan ng mekanismo ng cross-chain na komunikasyon.
 2. Ang kabuuang sirkulasyon ng parehong token ay dapat na pangasiwaan sa dalawang network, ibig sabihin, ang kabuuang epektibo na suplay ng isang token ay dapat na suma ng kabuuang epektibo na supply ng token sa parehong BSC at BC.
 3. Ang mga token ay maaaring unang likhain sa BSC sa isang katulad na ayos sa ERC20 token na pamantayan, o sa BC bilang isang BEP2, pagkatapos ay nilikha sa kabila. Mayroong mga katutubong paraan sa parehong mga network upang maidugtong ang dalawa at i-sigurado ang kabuuang supply ng token.
 
@@ -120,7 +120,7 @@ Ang BNB ay tatakbo sa BSC sa parehong paraan tulad ng ETH na tumatakbo sa Ethere
 
 Ang ilang mga halaga ng BNB ay susunugin sa BC at huhulmahin sa BSC sa yugto ng genesis. Ang halagang ito ay tinatawag na "Pondong Binhi" upang mag-ikot sa BSC pagkatapos ng unang bloke, na ipapadala sa paunang BC-patungo-sa-BSC na Tagahatid (inilarawan sa mga susunod na seksyon) at paunang itinakdang hanay ng tagapagpatunay na ipinakilala sa genesis. Ang mga BNB na ito ay ginagamit upang magbayad ng mga bayarin sa transaksyon habang maaga upang ilipat ang mas madaming BNB mula sa BC patungo sa BSC sa pamamagitan ng mekanismo ng cross-chain.
 
-Ang BNB cross-chain na paglipat ay tinalakay sa isang susunod na seksyon, ngunit para sa paglipat mula sa BC patungong BSC, sa pangkalahatan ito ay upang i-lock ang BNB sa BC mula sa pinagmulang address ng paglipat sa isang address na kontrolado ng sistema at i-unlock ang kaukulang halaga mula sa espesyal na kontrata papunta sa target na address ng paglipat sa BSC, o sa kabaligtaran, kapag ililipat mula sa BSC patungong BC, ito ay upang i-lock ang BNB mula sa pinagmulang address sa BSC patungo sa isang espesyal na kontrata at palabasin ang naka-lock na halaga sa BC mula sa address ng system patungo sa target na address. Ang lohika ay nauugnay sa katutubong kodigo sa BC at isang serye ng mga matalinong kontrata sa BSC.
+Ang BNB cross-chain na paglipat ay tinalakay sa isang susunod na seksyon, ngunit para sa paglipat mula sa BC patungong BSC, sa pangkalahatan ito ay upang i-lock ang BNB sa BC mula sa pinagmulang address ng paglipat sa isang address na kontrolado ng sistema at i-unlock ang kaukulang halaga mula sa espesyal na kontrata papunta sa target na address ng paglipat sa BSC, o sa kabaligtaran, kapag ililipat mula sa BSC patungong BC, ito ay upang i-lock ang BNB mula sa pinagmulang address sa BSC patungo sa isang espesyal na kontrata at palabasin ang naka-lock na halaga sa BC mula sa address ng sistema patungo sa target na address. Ang lohika ay nauugnay sa katutubong kodigo sa BC at isang serye ng mga matalinong kontrata sa BSC.
 
 ## Iba Pang Mga Token
 
@@ -158,7 +158,7 @@ Ang isang tipikal na pamamaraan upang maibigkis ang BEP2 at BEP2E ay magiging ka
 
 # Cross-Chain na Paglipat at Komunikasyon
 
-Ang komunikasyon na cross-chain ay ang pangunahing pundasyon upang payagan ang komunidad na samantalahin ang istraktura ng dalawahang kadena:
+Ang cross-chain na komunikasyon ay ang pangunahing pundasyon upang payagan ang komunidad na samantalahin ang istraktura ng dalawahang kadena:
 
 * Ang mga gumagamit ay malayang lumikha ng anumang tokenization, mga produktong pampinansyal, at mga digital na assets sa BSC o BC ayon sa gusto nila
 * ang mga item sa BSC ay maaaring manu-manong at naka-program na ikakalakal at ikakalat sa isang matatag, mataas na throughput, kasingbilis ng kidlat at magiliw na kapaligiran ng BC
@@ -185,7 +185,7 @@ Ang arkitektura ng cross-chain na komunikasyon ay tulad ng nasa itaas na diagram
 
 Ang BC ay isang blockchain na nakabatay sa Tendermint at may kagyat na kawakasan. Ang mga Tagapagpatunay na may hindi bababa sa ⅔\*N+1 ng kabuuang kapangyarihan sa pagboto ay kasabay na mag pipirma ng bawat bloke sa kadena. Kaya't praktikal na patunayan ang mga transaksyon sa bloke at kahit ang halaga ng estado sa pamamagitan ng **Ulo ng Bloke** at **Patunay na Merkle** nag pagpapatunay. Nasaliksik ito at ipinatupad bilang “**Protokol na Magaan na Kliyente**”, na masidhing tinalakay sa komunidad ng [Ethereum](https://github.com/ethereum/wiki/wiki/Light-client-protocol), pinag-aralan at ipinatupad para sa [Cosmos inter-chain na komunikasyon](https://github.com/cosmos/ics/blob/a4173c91560567bdb7cc9abee8e61256fc3725e9/spec/ics-007-tendermint-client/README.md).
 
-Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na magpalitaw ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
+Ang komunikasyon na BC-patungo-sa-BSC ay papatunayan sa isang “**on-chain na magaan na kliyente**” na ipinatupad sa pamamagitan ng BSC na **Mga Matalinong Kontrata** (ang ilan sa mga ito ay maaaring “**pre-compiled**”). Matapos ang ilang mga transaksyon at pagbabago ng estado na nangyari sa BC, kung ang isang transaksyon ay itinakda na mag-udyok ng cross-chain na komunikasyon, ang mensahe ng “**pakete**” na Cross-chain ay malilikha at ang **BSC na mga Tagahatid** ay magpapasa at magsusumite ng mga ito sa BSC bilang datos sa "build-in na mga sistemang kontrata". Ang mga build-in na mga sistemang kontrata ay papatunayan ang pakete at isasagawa ang mga transaksyon kung pumasa ito sa pagpapatunay. Gagarantiyahan ang pagpapatunay ng disenyo sa ibaba:
 
 1. Ang estado sa pag-bloke ng BC ay isisink sa mga magaan na kliyente na kontrata sa BSC paminsan-minsan, sa pamamagitan ng ulo ng bloke at paunang mga komit, para sa mga impormasyon sa ibaba:
     * bloke at app hash ng BC na napirmahan ng mga tagapagpatunay
@@ -210,8 +210,8 @@ Gumagamit ang BSC ng Patunay ng Itinayang Awtoridad na protokol ng pagkakasundua
 
 Upang ganap na samantalahin ang korum ng tagapagpatunay ng BC, isang ideyang katulad sa maraming [Tulay](https://github.com/poanetwork/poa-bridge) o Orakulong mga blockchain ang gagamitin:
 
-1. Ang mga kahilingan sa komunikasyon na cross-chain mula sa BSC ay isusumite at isinasagawa sa BSC bilang mga transaksyon. Ang pagsasagawa ng transanction ay magpapalabas ng `Events`, at ang mga naturang kaganapan ay maaaring sundin at ibalot sa ilang mga “**Orakulo**” papunta sa BC. Sa halip na Mga Ulo ng Bloke, Hash at Patunay na Merkle, ang ganitong uri ng "Orakulo" na pakete na direktang naglalaman ng impormasyong cross-chain para sa mga pagkilos, tulad ng nagpadala, tatanggap at halaga na ililipat.
-2. Upang matiyak ang seguridad ng Orakulo, ang mga nagpapatunay ng BC ay bubuo ng isa pang korum ng mga “**Orakulong Tagahatid**”. Ang bawat tagapagpatunay ng BC ay dapat magpatakbo ng isang **nakatuon na proseso** bilang Orakulong Tagahatid. Ang mga Orakulong Tagahatid na ito ay magsusumite at magboboto para sa cross-chain na pakete ng komunikasyon, tulad ng Orakulo, papunta sa BC, gamit ang parehong mga susi ng tagapagpatunay. Anumang pakete na nilagdaan ng higit sa ⅔\*N+1 na kapangyarihan ng pagboto ng mga Orakulong Tagahatid ay kasing ligtas ng anumang bloke na nilagdaan ng ⅔\*N+1 ng parehong kapangyarihan ng pagboto ng korum ng mga tagapagpatunay.
+1. Ang mga kahilingan sa cross-chain na komunikasyon mula sa BSC ay isusumite at isinasagawa sa BSC bilang mga transaksyon. Ang pagsasagawa ng transanction ay magpapalabas ng `Events`, at ang mga naturang kaganapan ay maaaring sundin at ibalot sa ilang mga “**Orakulo**” papunta sa BC. Sa halip na Mga Ulo ng Bloke, Hash at Patunay na Merkle, ang ganitong uri ng "Orakulo" na pakete na direktang naglalaman ng impormasyong cross-chain para sa mga pagkilos, tulad ng nagpadala, tatanggap at halaga na ililipat.
+2. Upang matiyak ang seguridad ng Orakulo, ang mga tagapagpatunay ng BC ay bubuo ng isa pang korum ng mga “**Orakulong Tagahatid**”. Ang bawat tagapagpatunay ng BC ay dapat magpatakbo ng isang **nakatuon na proseso** bilang Orakulong Tagahatid. Ang mga Orakulong Tagahatid na ito ay magsusumite at magboboto para sa cross-chain na pakete ng komunikasyon, tulad ng Orakulo, papunta sa BC, gamit ang parehong mga susi ng tagapagpatunay. Anumang pakete na nilagdaan ng higit sa ⅔\*N+1 na kapangyarihan ng pagboto ng mga Orakulong Tagahatid ay kasing ligtas ng anumang bloke na nilagdaan ng ⅔\*N+1 ng parehong kapangyarihan ng pagboto ng korum ng mga tagapagpatunay.
 
 Sa paggamit ng parehong korum ng tagapagpatunay, nilalagay nito ang kodigo ng magaan na kliyente sa BC at ang tuluy-tuloy na mga pagbabago ng bloke sa BC. Ang nasabing mga Orakulo ay mayroon ding mga Orakulo ID at uri, upang matiyak ang pagkakasunud-sunod at wastong pangangasiwa ng kamalian.
 
@@ -229,26 +229,84 @@ Mas mainam na ang mga gumagamit ay umaasang gagamit ng dalawang magkatulad na mg
 
 ## Kaganapan sa Kontrata ng Cross-Chain
 
-Ang Kaganapan sa Kontrata ng Cross-Chain (CCCE) ay idinisenyo upang payagan ang isang matalinong kontrata na magpalitaw ng mga cross-chain na transaksyon, direkta sa pamamagitan ng kodigo ng kontrata. Nagiging posible ito batay sa:
+Ang Kaganapan sa Kontrata ng Cross-Chain (CCCE) ay idinisenyo upang payagan ang isang matalinong kontrata na mag-udyok ng mga cross-chain na transaksyon, direkta sa pamamagitan ng kodigo ng kontrata. Nagiging posible ito batay sa:
 
 1. Ang karaniwang mga sistemang kontrata ay maaaring ibigay upang maghatid ng mga operasyon na maaaring tawagin ng pangkalahatang matalinong mga kontrata;
 2. Ang karaniwang mga kaganapan ay maaaring mailabas ng karaniwang mga kontrata;
-3. Ang mga Orakulong Tagahatid ay maaaring makuha ang karaniwang mga kaganapan, at mapalitaw ang kaukulang mga operasyon ng cross-chain;
+3. Ang mga Orakulong Tagahatid ay maaaring makuha ang karaniwang mga kaganapan, at ma-udyok ang kaukulang mga operasyon ng cross-chain;
 4. Ang nakatuon na address na pinangangasiwaan ng kodigo (account) ay maaaring likhain sa BC at mai-access ng mga kontrata sa BSC, dito pinangalanan bilang **Address ng Kontrata sa BC” (CAoB)**.
 
 Maraming karaniwang pagpapatakbo ang ipinatupad:
 
-1. BSC patungo sa BC na paglipat: ipinatupad ito sa parehong paraan tulad ng normal na BSC patungo sa BC na paglipat, nagpapalitaw lamang sa pamamagitan ng karaniwang kontrata. Ang pondo ay maaaring ilipat sa anumang address sa BC, kabilang ang kaukulang CAoB ng kontrata na pinagmulan ng paglipat.
+1. BSC patungo sa BC na paglipat: ipinatupad ito sa parehong paraan tulad ng normal na BSC patungo sa BC na paglipat, nag-uudyok lamang sa pamamagitan ng karaniwang kontrata. Ang pondo ay maaaring ilipat sa anumang address sa BC, kabilang ang kaukulang CAoB ng kontrata na pinagmulan ng paglipat.
 2. Paglipat sa BC: ipinapatupad ito bilang isang espesyal na cross-chain na paglipat, habang ang totoong paglipat ay mula sa **CAoB** papunta sa anumang iba pang address (kahit na isa pang CAoB).
-3. BC patungo sa BSC na paglipat: ipinatutupad ito bilang dalawang-pass na cross-chain na komunikasyon. Ang una ay pinalitaw ng kontrata ng BSC at pinalaganap sa BC, at pagkatapos ay sa pangalawang pass, magsisimula ang BC ng isang normal na BC patungo sa BSC cross-chain na paglipat, mula sa **CAoB** hanggang sa address ng kontrata sa BSC. Ang isang espesyal na tala ay dapat bayaran na ang kontrata ng BSC ay nagdaragdag lamang ng balanse sa anumang paglipat na papasok sa pangalawang pass, at ang pangangasiwa ng kamalian sa pangalawang pass ay kapareho ng normal na BC patungo sa BSC na paglipat.
-4. IOC (Agaran-O-Kanselahin) na Kalakalan Palabas: ang pangunahing layunin ng paglilipat ng mga assets sa BC ay ang makipagkalakalan. Ang kaganapan na ito ay magtuturo upang ipagpalit ang isang tiyak na halaga ng isang asset sa CAoB sa isa pang pag-aari hangga't maaari at ilipat palabas ang lahat ng mga resulta, ibig sabihin, naiwan ang mapagkukunan at mga ipinalit na target na token ng kalakalan, pabalik sa BSC. Hahawakan ng BC ang mga nasabing hinatid na kaganapan sa pamamagitan ng pagpapadala ng isang "Agaran-O-Kanselahin", ibig sabihin, IOC na utos sa mga pares ng pangangalakal, sa sandaling ang susunod na pagtutugma ay natapos, ang resulta ay maihahatid pabalik sa BSC, na maaaring nasa alinman sa isa o dalawang mga pag-aari.
+3. BC patungo sa BSC na paglipat: ipinatutupad ito bilang dalawang-pass na cross-chain na komunikasyon. Ang una ay na-udyok ng kontrata ng BSC at pinalaganap sa BC, at pagkatapos ay sa pangalawang pass, magsisimula ang BC ng isang normal na BC patungo sa BSC cross-chain na paglipat, mula sa **CAoB** hanggang sa address ng kontrata sa BSC. Ang isang espesyal na tala ay dapat bayaran na ang kontrata ng BSC ay nagdaragdag lamang ng balanse sa anumang paglipat na papasok sa pangalawang pass, at ang pangangasiwa ng kamalian sa pangalawang pass ay kapareho ng normal na BC patungo sa BSC na paglipat.
+4. IOC (Agaran-O-Kanselahin) na Kalakalan Palabas: ang pangunahing layunin ng paglilipat ng mga assets sa BC ay ang makipagkalakalan. Ang kaganapan na ito ay magtuturo upang ipagpalit ang isang tiyak na halaga ng isang asset sa CAoB sa isa pang pag-aari hangga't maaari at ilipat palabas ang lahat ng mga resulta, ibig sabihin, ang natira, ang mapagkukunan at mga ipinalit na target na token ng kalakalan, pabalik sa BSC. Hahawakan ng BC ang mga nasabing hinatid na kaganapan sa pamamagitan ng pagpapadala ng isang "Agaran-O-Kanselahin", ibig sabihin, IOC na utos sa mga pares ng pangangalakal, sa sandaling ang susunod na pagtutugma ay natapos, ang resulta ay maihahatid pabalik sa BSC, na maaaring nasa alinman sa isa o dalawang mga pag-aari.
 5. Subasta na Kalakalan Palabas: Ang naturang kaganapan ay magtuturo sa BC na magpadala ng isang subasta na utos upang ipagpalit ang isang tiyak na halaga ng isang asset sa **CAoB** sa isa pang pag-aari hangga't maaari at ilipat palabas ang lahat ng mga resulta pabalik sa BSC sa pagtatapos ng subasta Paparating ang pagpapaandar sa subasta sa BC.
 
 Mayroong ilang mga detalye para sa Kalakalan Palabas:
 
 1. kapwa maaaring magkaroon ng isang limitasyong presyo (ganap o naaayon) para sa kalakal;
 2. ang huling resulta ay isusulat bilang mga cross-chain na pakete upang maihatid pabalik sa BSC;
-3. ang mga bayarin sa komunikasyon na cross-chain ay maaaring singilin mula sa asset na inilipat pabalik sa BSC;
+3. ang mga bayarin sa cross-chain na komunikasyon ay maaaring singilin mula sa asset na inilipat pabalik sa BSC;
 4. ang kontrata ng BSC ay nagpapanatili ng isang salamin ng balanse at natitirang mga order sa CAoB. Hindi alintana kung anumang kamalian ang mangyari sa panahon ng Kalakalan Palabas, ang huling katayuan ay ikakalat pabalik sa pinagmulan na kontrata at linisin ang panloob na estado.
 
 Sa mga katangian sa itaas, nagdaragdag lamang ito ng cross-chain na paglipat at mga kakayahan na maglipat na may mataas na liquidity sa lahat ng mga matalinong kontrata sa BSC. Lalo nitong idaragdag ang mga sitwasyon ng aplikasyon sa Matalinong Kontrata at dApps, at gagawing 1 chain +1 chain > 2 chain.
+
+# Pagtaya at Pamamahala
+
+Ang Patunay ng Itinayang Awtoridad ay nagdudulot ng desentralisasyon at paglahok sa komunidad. Ang pangunahing lohika nito ay maaaring ibuod ayon sa ibaba. Maaari kang makakita ng mga katulad na ideya mula sa iba pang mga network, lalo na ang Cosmos at EOS.
+
+1. Ang mga may hawak ng token, kasama ang mga tagapagpatunay, ay maaaring maglagay ng kanilang mga token na “**bonded**” sa taya. Ang mga may hawak ng token ay maaaring **magtalaga** ng kanilang mga token sa anumang tagapagpatunay o kandidatong tagapagpatunay, upang asahan na maaari itong maging isang aktwal na tagapagpatunay, at sa paglaon maaari silang pumili ng ibang tagapagpatunay o kandidato upang **muling magtalaga** ng kanilang mga token <sup>1</sup>.
+2. Ang lahat ng mga kandidatong tagapagpatunay ay mairaranggo base sa bilang ng mga bonded na token sa kanila, at ang nangungunang sa mga ito ay magiging totoong mga tagapagpatunay.
+3. Maaaring ibahagi (bahagi ng) ng mga Tagapagpatunay ang kanilang gantimpala sa pag-bloke sa kanilang mga delegado.
+4. Ang mga Tagapagpatunay ay maaaring magdusa mula sa “**Pagbawas**”, isang parusa para sa kanilang mga masamang pagkilos, tulad ng dobleng pagpirma at/o kawalang-tatag. Ang nasabing pagkawala ay ibabahagi pati na rin ng kanilang **mga delegado**.
+5. Mayroong isang "**unboding na panahon**" para sa mga tagapagpatunay at delegado upang masiguro ng sistema na ang mga token ay mananatiling naka-bond kapag nahuli ang mga masamang pagkilos, ang mananagot ay mababawasan sa panahong ito.
+
+## Pagtaya sa BC
+
+Mas mainam na ang naturang lohika ng pagtaya at gantimpala ay dapat na parte na blockchain, at awtomatikong pinapatupad habang nangyayari ang pag-bloke. Ang Cosmos Hub, na nagbabahagi ng parehong Tendermint na pagkakasunduan at mga librerya sa Binance Chain, ay gumagana sa ganitong paraan.
+
+Naghahanda ang BC upang paganahin ang lohika ng pagtaya mula pa noong mga araw ng pagdisenyo nito. Sa kabilang panig, tulad ng nais ng BSC na manatiling katugma sa Ethereum hangga't maaari, ito ay isang malaking hamon at pagsisikap na ipatupad ang naturang lohika dito. Totoo ito lalo na kapag ang Ethereum mismo ay maaaring lumipat sa ibang Patunay ng Taya na protokol ng pagkakasunduan sa isang maikling (o mas matagal) na oras. Upang mapanatili ang pagiging tugma at muling magamit ang magandang pundasyon ng BC, ang lohika ng pagtyaa ng BSC ay ipinatupad sa BC:
+
+1. Ang token sa pagtaya ay BNB, dahil ito ay isang katutubong token sa parehong mga blockchain gayon pa man
+2. Ang pagtaya, ibig sabihin, token bond at pagkilos ng delegasyon at mga tala para sa BSC, ay nangyayari sa BC.
+3. Ang hanay ng tagapagpatunay ng BSC ay natutukoy sa pamamagitan ng pagtaya at delegado na lohika, sa pamamagitan ng isang modyul ng pagtaya na itinayo sa BC para sa BSC, at pinalaganap araw-araw UTC 00:00 mula BC hanggang BSC sa pamamagitan ng Cross-Chain na komunikasyon.
+4. Ang pamamahagi ng gantimpala ay nangyayari sa BC sa humigit-kumulang araw-araw UTC 00:00.
+
+## Gantimpala
+
+Parehong nangyayari ang pag-update ng tagapagpatunay at pamamahagi ng gantimpala araw-araw ng UTC 00:00. Ito ay upang makatipid sa gastos ng madalas na mga pag-update ng staking at pamamahagi ng gantimpala ng bloke. Ang gastos na ito ay maaaring maging malaki, dahil ang gantimpala ng bloke ay nakokolekta sa BSC at ibinabahagi sa BC sa mga tagapagpatunay at delegado ng BSC. (Mangyaring tandaan na ang mga bayarin sa pag-bloke ng BC ay mananatiling makabuluhan sa mga tagapagpatunay lamang ng BC.)
+
+Ang isang sadyang pagkaantala ay ipinakilala dito upang matiyak na ang pamamahagi ay patas:
+
+1. Ang gantimpala sa pag-bloke ay hindi ipapadala kaagad sa tagapagpatunay, sa halip, ipapamahagi at maiipon ito sa isang kontrata;
+2. Sa pagtanggap ng itinatakdang pag-update ng tagapagpatunay sa BSC, mag-uudyok ito ng ilang mga cross-chain na paglipat upang ilipat ang gantimpala sa mga address ng pangangalaga sa mga kaukulang tagapagpatunay. Ang mga address ng pangangalaga ay pag-aari ng sistema upang hindi magastos ang gantimpala hangga't hindi nangyayari ang ipinangakong pamamahagi sa mga delegado.
+3. Upang gawing mas simple ang sinkronisasyon at maglaan ng oras upang mapaunlakan ang pagbawas, ang gantimpala para sa N na araw ay ibabahagi lamang sa N+2 na araw. Matapos makuha ng mga delegado ang gantimpala, ililipat ang natira sa sariling mga address ng gantimpala ng mga tagapagpatunay.
+
+## Pagbawas
+
+Ang pagbawas ay bahagi ng on-chain na pamamahala, upang matiyak na ang mga nakakahamak o negatibong pagkilos ay maparusahan. Ang bawas sa BSC ay maaaring isumite ng sinuman. Ang pagsusumite ng transaksyon ay nangangailangan ng **ebidensya ng bawas** at mga bayarin sa gastos ngunit nagdadala din ng isang mas malaking gantimpala kapag ito ay matagumpay.
+
+Sa ngayon mayroong dalawang mga kaso na maaaring maisagawa ang pagbawas.
+
+### Dobleng Pagpirma
+
+Ito ay lubos na seryosong kamalian at malamang ay sinadyang kasalanan kapag ang isang tagapagpatunay ay nagpirma ng higit sa isang bloke na may parehong taas at magulang na bloke. Ang implementasyon ng sanggunian na protokol ay dapat na meron ng lohika upang maiwasan ito, kaya ang nakakahamak na kodigo lamang ang maaaring mag-udyok nito. Kapag nangyari ang Dobleng Pagpirma, dapat alisin kaagad ang tagapagpatunay mula sa **Hanay** ng Tagapagpatunay.
+
+Ang sinuman ay maaaring magsumite ng isang hiling na pagbawas sa BC na may katibayan ng Dobleng Pagpirma ng BSC, na dapat maglaman ng 2 ulo ng bloke na may parehong taas at magulang na bloke, na tinatakan ng nagkasala na tagapagpatunay. Sa pagtanggap ng ebidensya, kung mapatunayan ito ng BC na totoo:
+
+1. Ang tagapagpatunay ay aalisin mula sa hanay nito ng isang instansiya ng hanay ng tagapagpatunay ng BSC na update sa Cross-Chain;
+2. Ang taya sa tagapagpatunay ay babawasan ng paunang natukoy na halaga;
+3. Bahagi ng nabawasan na BNB ay ilalaan sa address ng nagsumite, na kung saan ay isang gantimpala at mas malaki kaysa sa gastos ng pagsumite ng transaksyon sa paghiling ng pagbawas
+4. Ang natitirang nabawasan na BNB ay ilalaan sa ibang mga address na nasa pangangalaga ng mga tagapagpatunay, at ibabahagi sa lahat ng mga delegado sa parehong paraan ng gantimpala sa pag-bloke.
+
+### Hindi Nagagamit
+
+Ang pagka aktibo ng BSC ay nakasalalay na lahat sa Patunay ng Itinayang Awtoridad na hanay ng tagapagpatunay ay makakagawa ng mga bloke ng napapanahon kapag pagkakataon na nila. Ang mga Tagapagpatunay ay maaaring makaligtaan ang kanilang pagkakataon dahil sa anumang kadahilanan, lalo na ang mga problema sa kanilang hardware, software, pagsasaayos o network. Ang kawalang-tatag ng operasyon na ito ay makakasakit sa kakayahang pagganap at magpapakilala ng higit na hindi matukoy na aspeto sa sistema.
+
+Maaaring may isang panloob na matalinong kontrata na responsable sa pagtatala ng mga hindi nasagot na sukatan ng pag-bloke ng bawat tagapagpatunay. Kapag ang mga sukatan ay nasa itaas na ng paunang natukoy na threshold, ang gantimpala sa pag-bloke para sa tagapagpatunay ay hindi maihahatid sa BC para sa pamamahagi ngunit ibabahagi sa iba pang mas mahusay na mga tagapagpatunay. Sa paraang iyon, ang tagapagpatunay na hindi maganda ang pagpapatakbo ay dapat na unti-unting iboto paalis mula sa itinakdang tagapagpatunay dahil ang kanilang mga delegado ay tatanggap ng mas kaunti o walang gantimpala. Kung ang mga sukatan ay mananatili sa itaas ng isa pang mas mataas na antas ng threshold, ang tagapagpatunay ay mahuhulog mula sa pag-ikot, at ito ay ikakalat pabalik sa BC kapag may isang Pagbawas na magaganap sa taya ng tagapagpatunay.
+
+### Mga Parametro sa Pamamahala
+
+Maraming mga parametro ng sistema upang makontrol ang pagkilos ng BSC, hal. halaga ng pagbawas, bayad sa cross-chain na paglipat. Ang lahat ng mga parametro na ito ay matutukoy ng BSC na Hanay ng Tagapagpatunay nang sama-sama sa pamamagitan ng proseso ng pagboto ng panukala batay sa kanilang pagtaya. Ang nasabing proseso ay isasagawa sa BC, at ang mga bagong halaga ng parametro ay kukunin ng kaukulang mga kontrata ng sistema sa pamamagitan ng isang cross-chain na komunikasyon.
