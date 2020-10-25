@@ -4,7 +4,7 @@
 
 _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng madalas para sa mga pagbabago!_
 
-## Talaan ng Nilalaman
+## Talaan ng mga Nilalaman
 
 - [Pagganyak](#pagganyak)
 - [Mga Prinsipyo ng Disenyo](#mga-prinsipyo-ng-disenyo)
