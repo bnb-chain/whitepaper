@@ -27,10 +27,10 @@ _TANDAAN: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
   * [Pagtaya sa BC](#pagtaya-sa-bc)
   * [Paggantimpala](#paggantimpala)
   * [Pagbawas](#pagbawas)
-- [Tagahatid](#tagahatid)
-  * [BSC Relayers](#bsc-relayers)
+- [Mga Tagahatid](#mga-tagahatid)
+  * [Mga Tagahatid ng BSC](#mga-tagahatid-ng-bsc)
   * [Mga Orakulong Tagahatid](#mga-orakulong-tagahatid)
-- [Outlook](#outlook)
+- [Pananaw](#pananaw)
 
 # Pagganyak
 
@@ -44,7 +44,7 @@ Ipinapanukala namin ang isang kahanay na blockchain ng kasalukuyang Binance Chai
 
 # Mga Prinsipyo ng Disenyo
 
-Matapos ang paglikha ng kahanay na blockchain sa Binance Chain ecosystem, dalawang blockchain ang tatakbo ng sabay upang magbigay ng iba't ibang mga serbisyo. Ang bagong kahanay na chain ay tatawaging “**Binance Smart Chain**” (pinaikli na “**BSC**” para sa mga seksyon sa ibaba), habang ang umiiral na mainnet ay tatawagin pa rin na “**Binance Chain**” (pinaikli na “**BC**” para sa mga seksyon sa ibaba).
+Matapos ang paglikha ng kahanay na blockchain sa Binance Chain ecosystem, dalawang blockchain ang tatakbo ng sabay upang magbigay ng iba't ibang mga serbisyo. Ang bagong kahanay na kadena ay tatawaging “**Binance Smart Chain**” (pinaikli na “**BSC**” para sa mga seksyon sa ibaba), habang ang umiiral na mainnet ay tatawagin pa rin na “**Binance Chain**” (pinaikli na “**BC**” para sa mga seksyon sa ibaba).
 
 Narito ang mga prinsipyo ng disenyo ng **BSC**:
 
@@ -94,11 +94,11 @@ Sa 21 mga tagapagpatunay, kung ang oras ng bloke ay 5 segundo, ang ⅔\*N+1 na m
 
 ## Gantimpala
 
-Lahat ng mga tagapagpatunay ng BSC sa kasalukuyang hanay ng tagapagpatunay ay gagantimpalaan ng mga **bayarin sa transaksyon sa BNB**. Dahil ang BNB ay hindi isang inflationary token, hindi magkakaroon ng mga gantimpala sa pagmimina gaya ng binibigay ng Bitcoin at Ethereum network, at ang bayad sa gas ay ang pangunahing gantimpala para sa mga tagapagpatunay. Dahil ang BNB ay mga utility token din na may iba pang mga gamit, tatangkilikin pa rin ng mga delegado at tagapagpatunay ang iba pang mga benepisyo ng paghawak ng BNB.
+Lahat ng mga tagapagpatunay ng BSC sa kasalukuyang hanay ng tagapagpatunay ay gagantimpalaan ng mga **bayarin sa transaksyon gamit ang BNB**. Dahil ang BNB ay hindi isang inflationary token, hindi magkakaroon ng mga gantimpala sa pagmimina gaya ng binibigay ng Bitcoin at Ethereum network, at ang bayarin sa gas ay ang pangunahing gantimpala para sa mga tagapagpatunay. Dahil ang BNB ay mga utility token din na may iba pang mga gamit, tatangkilikin pa rin ng mga delegado at tagapagpatunay ang iba pang mga benepisyo ng paghawak ng BNB.
 
 Ang gantimpala para sa mga tagapagpatunay ay ang mga bayarin na nakolekta mula sa mga transaksyon sa bawat bloke. Maaaring magpasya ang mga tagapagpatunay kung magkano ang ibabalik sa mga delegado na tumaya sa kanila ng kanilang BNB, upang makaakit ng mas madaming taya. Ang bawat tagapagpatunay ay magpapalitan upang makabuo ng mga bloke sa parehong posibilidad (kung mananatili sila sa 100% na pagka aktibo), sa gayon, sa pangmatagalan, ang lahat ng mga matatag na tagapagpatunay ay maaaring makakuha ng magkakatulad na laki ng gantimpala. Samantala, ang mga taya sa bawat tagapagpatunay ay maaaring magkakaiba, kaya nagdadala ito ng isang kontra-intuitive na sitwasyon na mas madaming mga gumagamit ang nagtitiwala at naglalaan sa isang tagapagpatunay, maaaring makakuha sila ng mas kaunting gantimpala. Kaya't ang mga makatuwiran na delegado ay may posibilidad na magtalaga sa isa na may mas kaunting taya hangga't ang tagapagpatunay ay mapagkakatiwalaan pa rin (ang walang katiyakan na tagapagpatunay ay maaaring magdala ng peligro na pagbawas). Sa huli, ang mga taya sa lahat ng mga tagapagpatunay ay magkakaroon ng mas kaunting pagkakaiba-iba. Ito ay talagang pipigilan ang konsentrasyon ng taya at ang “nanalo ay mananalo palagi” na problemang nakikita sa ilang iba pang mga network.
 
-Ang ilang mga bahagi ng bayad sa gas ay igagantimpala din sa mga tagahatid para sa Cross-Chain na komunikasyon. Mangyaring mag-refer sa seksyong “[Tagahatid](#tagahatid)” sa ibaba.
+Ang ilang mga bahagi ng bayarin sa gas ay igagantimpala din sa mga tagahatid para sa Cross-Chain na komunikasyon. Mangyaring mag-refer sa seksyong “[Tagahatid](#tagahatid)” sa ibaba.
 
 # Ekonomiya ng Token
 
@@ -171,7 +171,7 @@ Ang cross-chain na paglipat ay ang pangunahing komunikasyon sa pagitan ng dalawa
 1. ang `transfer-out` blockchain ay ikakandado ang halaga mula sa mga address ng may-ari ng pinagmulan sa isang kinokontrol ng sistema na address/mga kontrata;
 2. ang `transfer-in` blockchain ay bubuksan ang halaga mula sa kinokontrol ng sistema na address/ mga kontrata at ipadala ito sa mga target na address.
 
-Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC at BC **Orakulo na mga Tagahatid** na patunayan:
+Dapat pahintulutan ng mensahe ng cross-chain na pakete ng paglipat ang BSC na mga Tagahatid at BC na mga **Orakulong Tagahatid** na patunayan:
 
 1. Sapat na halaga ng mga token assets ay inalis mula sa pinagmulang address at naka-lock sa isang kontrolado ng sistema na mga address/mga kontrata sa pinagmulang blockchain. At maaaring makumpirma ito sa target na blockchain.
 2. Ang mga wastong halaga ng mga token na assets ay inilabas mula sa kontrolado ng sistema na mga address/mga kontrata at inilalaan sa mga target na address sa target na blockchain. Kung nabigo ito, makukumpirma ito sa pinagmulang blockchain, upang ang naka-lock na token ay maaaring mailabas pabalik (maaaring ibawas ang mga bayarin).
@@ -251,7 +251,7 @@ Mayroong ilang mga detalye para sa Kalakalan Palabas:
 3. ang mga bayarin sa cross-chain na komunikasyon ay maaaring singilin mula sa asset na inilipat pabalik sa BSC;
 4. ang kontrata ng BSC ay nagpapanatili ng isang salamin ng balanse at natitirang mga order sa CAoB. Hindi alintana kung anumang kamalian ang mangyari sa panahon ng Kalakalan Palabas, ang huling katayuan ay ikakalat pabalik sa pinagmulan na kontrata at linisin ang panloob na estado.
 
-Sa mga katangian sa itaas, nagdaragdag lamang ito ng cross-chain na paglipat at mga kakayahan na maglipat na may mataas na liquidity sa lahat ng mga matalinong kontrata sa BSC. Lalo nitong idaragdag ang mga sitwasyon ng aplikasyon sa Matalinong Kontrata at dApps, at gagawing 1 chain +1 chain > 2 chain.
+Sa mga katangian sa itaas, nagdaragdag lamang ito ng cross-chain na paglipat at mga kakayahan na maglipat na may mataas na liquidity sa lahat ng mga matalinong kontrata sa BSC. Lalo nitong idaragdag ang mga sitwasyon ng aplikasyon sa Matalinong Kontrata at dApps, at gagawing 1 kadena +1 kadena > 2 kadena.
 
 # Pagtaya at Pamamahala
 
@@ -274,7 +274,7 @@ Naghahanda ang BC upang paganahin ang lohika ng pagtaya mula pa noong mga araw n
 3. Ang hanay ng tagapagpatunay ng BSC ay natutukoy sa pamamagitan ng pagtaya at delegado na lohika, sa pamamagitan ng isang modyul ng pagtaya na itinayo sa BC para sa BSC, at pinalaganap araw-araw UTC 00:00 mula BC hanggang BSC sa pamamagitan ng Cross-Chain na komunikasyon.
 4. Ang pamamahagi ng gantimpala ay nangyayari sa BC sa humigit-kumulang araw-araw UTC 00:00.
 
-## Gantimpala
+## Paggantimpala
 
 Parehong nangyayari ang pag-update ng tagapagpatunay at pamamahagi ng gantimpala araw-araw ng UTC 00:00. Ito ay upang makatipid sa gastos ng madalas na mga pag-update ng staking at pamamahagi ng gantimpala ng bloke. Ang gastos na ito ay maaaring maging malaki, dahil ang gantimpala ng bloke ay nakokolekta sa BSC at ibinabahagi sa BC sa mga tagapagpatunay at delegado ng BSC. (Mangyaring tandaan na ang mga bayarin sa pag-bloke ng BC ay mananatiling makabuluhan sa mga tagapagpatunay lamang ng BC.)
 
@@ -309,4 +309,36 @@ Maaaring may isang panloob na matalinong kontrata na responsable sa pagtatala ng
 
 ### Mga Parametro sa Pamamahala
 
-Maraming mga parametro ng sistema upang makontrol ang pagkilos ng BSC, hal. halaga ng pagbawas, bayad sa cross-chain na paglipat. Ang lahat ng mga parametro na ito ay matutukoy ng BSC na Hanay ng Tagapagpatunay nang sama-sama sa pamamagitan ng proseso ng pagboto ng panukala batay sa kanilang pagtaya. Ang nasabing proseso ay isasagawa sa BC, at ang mga bagong halaga ng parametro ay kukunin ng kaukulang mga kontrata ng sistema sa pamamagitan ng isang cross-chain na komunikasyon.
+Maraming mga parametro ng sistema upang makontrol ang pagkilos ng BSC, hal. halaga ng pagbawas, bayad sa cross-chain na paglipat. Ang lahat ng mga parametro na ito ay matutukoy ng BSC na Hanay ng Tagapagpatunay nang sama-sama sa pamamagitan ng proseso ng pagboto ng panukala batay sa kanilang pagtaya. Ang nasabing proseso ay isasagawa sa BC, at ang mga bagong halaga ng parametro ay kukunin ng kaukulang mga sistemang kontrata sa pamamagitan ng isang cross-chain na komunikasyon.
+
+# Mga Tagahatid
+
+Ang mga tagahatid ang responsable sa pagsumite ng mga Cross-Chain na Komunikasyon na Pakete sa pagitan ng dalawang mga blockchain. Dahil sa magkakaiba-ibang istraktura ng magkahanay na kadena, dalawang magkaibang uri ng Tagahatid ang nalikha.
+
+## Mga Tagahatid ng BSC
+
+Ang mga tagahatid para sa komunikasyon ng BC patungo sa BSC ay tinatawag na mga “**Tagahatid ng BSC**”, o simpleng mga "Tagahatid". Ang Paghatid ay isang nakapag-iisang proseso na maaaring patakbuhin ng sinuman, at saanman, maliban na ang mga Tagahatid ay dapat magparehistro ng kanilang sarili sa BSC at magdeposito ng isang tiyak na naibabalik na halaga ng BNB. Ang mga kahilingan lamang sa paghatid mula sa mga nakarehistrong Tagahatid ang tatanggapin ng BSC.
+
+Ang pakete na hinahatid nila ay papatunayan ng on-chain na magaan na kliyente sa BSC. Ang matagumpay na paghatid ay kailangang pumasa sa sapat na pagpapatunay at may gastos na mga bayarin sa gas sa BSC, at sa gayon ay dapat mayroong gantimpalang insentibo upang mahikayat ang komunidad na magpatakbo ng mga Tagahatid.
+
+### Mga Insentibo
+
+Mayroong dalawang pangunahing uri ng komunikasyon:
+
+1. Mga Operasyon na inudyok ng mga gumagamit, tulad ng `token bind` o `cross chain transfer`. Dapat magbayad ang mga gumagamit ng karagdagang bayad bilang gantimpala ng tagahatid. Ibabahagi ang gantimpala sa mga tagahatid na nagsisink sa mga natukoy na mga ulo ng blockchain. Bukod, ang gantimpala ay hindi mababayaran nang direkta sa mga account ng mga tagahatid. Ipapatupad ang isang mekanismo ng pamamahagi ng gantimpala upang maiwasan ang monopolisasyon.
+2. Sinkronisasyon ng Sistema, tulad ng paghahatid ng `refund package` (sanhi ng mga pagkabigo ng karamihan sa mga orakulong tagahatid), espesyal na sinkronisasyon ng ulo ng blockchain (ang ulo ay naglalaman ng pag-update ng hanay ng tagapagpatunay ng BC), pakete ng pagtaya ng BSC. Ang kontrata ng gantimpala ng sistema ay magbabayad ng gantimpala sa mga account ng mga tagahatid nang direkta.
+
+Kung ang ilang mga Tagahatid ay may mas mabilis na mga network at mas mahusay na hardware, maaari nilang i-monopolyo ang lahat ng paghatid ng pakete at walang maiiwan na gantimpala sa iba. Sa gayon mas kaunting mga kalahok ang sasali para sa paghatid, na hihikayat ng sentralisasyon at pipinsala sa kahusayan at seguridad ng network. Mas mainam, dahil sa desentralisasyon at dinamikong muling halalan ng mga tagapagpatunay ng BSC, ang isang Tagahatid ay maaaring hindi palaging ang una na maghatid ng bawat mensahe. Ngunit upang maiwasan ang karagdagang monopolisasyon, ang ekonomiya ng paggantimpala ay espesyal din na idinisenyo upang mabawasan ang nasabing pagkakataon:
+
+1. Ang gantimpala para sa mga Tagahatid ay ibabahagi lamang ayon sa pagkapangkat, at ang isang pangkat ang sasaklaw sa isang bilang ng mga matagumpay na naihatid na pakete.
+2. Ang gantimpala na maaaring makuha ng isang Tagahatid mula sa isang pamamahagi sa pagkapangkat ay hindi tuwid ang proporsyon sa bilang ng kanilang mga matagumpay na naihatid na pakete. Sa halip, maliban sa unang ilang mga paghatid, kapag mas maraming naihatid ang isang Tagahatid sa panahon ng isang pangkat, mas kaunting gantimpala ang makokolekta nito.
+
+## Mga Orakulong Tagahatid
+
+Ang mga tagahatid para sa komunikasyon ng BSC patungo sa BC ay gumagamit ng modelong "Orakulo", at tinaguriang mga “**Orakulong Tagahatid**”. Ang bawat isa sa mga tagapagpatunay ay dapat, at ang nasa hanay ng tagapagpatunay lamang, ang magpatakbo ng mga Orakulong Tagahatid. Pinapanood ng bawat Orakulong Tagahatid ang pagbabago ng estado ng blockchain. Kapag nahuli nito ang Mga Pakete ng Cross-Chain na Komunikasyon, isusumite ito upang bumoto para sa mga kahilingan. Pagkatapos ng mga Orakulong Tagahatid mula sa ⅔ ng kapangyarihan sa pagboto ng mga tagapagpatunay ng BC na bumoto para sa mga pagbabago, isasagawa ang mga pagkilos na cross-chain.
+
+Dapat maghintay ang Orakulong Tagahatid para sa sapat na mga bloke upang kumpirmahin ang kawakasan sa BSC bago magsumite at bumto para sa mga cross-chain na pakete ng komunikasyon patungoo sa BC.
+
+Ang mga bayarin sa cross-chain ay ibabahagi sa mga tagapagpatunay ng BC kasama ang normal na mga gantimpala sa pag-bloke sa BC.
+
+Ang nasabing orakulong uri ng paghatid ay nakasalalay sa lahat ng mga tagapagpatunay na suportahan. Dahil ang lahat ng mga boto para sa mga pakete ng cross-chain na komunikasyon ay naitala sa blockchain, hindi mahirap magkaroon ng isang panukat na sistema upang masuri ang kakayahan sa pagganap ng mga Orakulong Tagahatid. Ang pinakamahinang tagaganap ay maaaring ang kanilang mga gantimpala ay kalmutin pabalik sa pamamagitan ng isa pang Pagbawas na lohika na ipinakilala sa hinaharap.
