@@ -47,12 +47,12 @@ Aunque la Prueba de trabajo (Proof-of-Work - PoW) ha sido aceptada como un mecan
 
 Ethereum y algunas otras redes tales como MATIC Bor, TOMOChain, GoChain, xDAI, usan Prueba de Autoridad (Proof-of-Authority - PoA) o sus variantes en diferentes escenarios, incluidas la testnet así como la mainnet. La PoA proporciona alguna defensa contra el ataque del 51%, con eficiencia mejorada y con tolerancia para un cierto nivel de actores bizantinos (maliciosos o hackeados). Funciona como una opción fundamental fácil de escoger.
 
-Mientras tanto, el protocolo PoA es el más criticado por no ser tan descentralizado como el de PoW, puesto que los validadores, es decir, los nodos que se turnan para producir bloques, tienen todos autoridad y son propensos a la corrupción y a los ataques contra la seguridad. Otras blockchains tales como EOS y Cosmos introducen ambas diferentes tipos de prueba de participación delegada (Deputy Proof of Stake - DPoS) para permitir votar a los tenedores de tokens y elegir el grupo validador. Esto incrementa la descentralización y favorece la gobernanza comunitaria.
+Mientras tanto, el protocolo PoA es el más criticado por no ser tan descentralizado como el de PoW, puesto que los validadores, es decir, los nodos que se turnan para producir bloques, tienen todos autoridad y son propensos a la corrupción y a los ataques contra la seguridad. Otras blockchains tales como EOS y Cosmos introducen ambas diferentes tipos de prueba de participación delegada (Delegated Proof of Stake - DPoS) para permitir votar a los tenedores de tokens y elegir el grupo validador. Esto incrementa la descentralización y favorece la gobernanza comunitaria.
 
 Aquí se propone que en BSC se combine DPoS y PoA para consenso, de manera que:
 
 1. Los bloques sean producidos por un grupo limitado de validadores.
-2. Los validadores se turnen para producir bloques a la manera PoA, similar a Clique, el motor de consenso de Ehereum.
+2. Los validadores se turnen para producir bloques a la manera PoA, similar a Clique, el motor de consenso de Ethereum.
 3. El grupo de validadores sea elejido dentro y fuera en función de una gobernanza basada en la participación.
 
 ## Quorum de validación
