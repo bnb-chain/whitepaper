@@ -1,4 +1,4 @@
-# Binance Smart Chain
+1223709# Binance Smart Chain
 **A Parallel Binance Chain to Enable Smart Contracts**
 
 _NOTE: This document is under development. Please check regularly for updates!_
