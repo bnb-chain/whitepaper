@@ -1,5 +1,5 @@
-# Binance Smart Chain
-**A Parallel Binance Chain to Enable Smart Contracts**
+# BNB Smart Chain
+**A Parallel Blockchain to Beacon Chain to Enable Smart Contracts**
 
 _NOTE: This document is under development. Please check regularly for updates!_
 
@@ -31,17 +31,17 @@ _NOTE: This document is under development. Please check regularly for updates!_
 - [Outlook](#outlook)
 # Motivation
 
-After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Binance Chain](https://www.binance.org) has exhibited its high speed and large throughput design. Binance Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [Binance DEX](https://www.binance.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
+After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Beacon Chain](https://www.binance.org) has exhibited its high speed and large throughput design. Beacon Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [Binance DEX](https://www.binance.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
 
-Flexibility and usability are often in an inverse relationship with performance. The concentration on providing a convenient digital asset issuing and trading venue also brings limitations. Binance Chain's most requested feature is the programmable extendibility, or simply the [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) and Virtual Machine functions. Digital asset issuers and owners struggle to add new decentralized features for their assets or introduce any sort of community governance and activities.
+Flexibility and usability are often in an inverse relationship with performance. The concentration on providing a convenient digital asset issuing and trading venue also brings limitations. Beacon Chain's most requested feature is the programmable extendibility, or simply the [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) and Virtual Machine functions. Digital asset issuers and owners struggle to add new decentralized features for their assets or introduce any sort of community governance and activities.
 
-Despite this high demand for adding the Smart Contract feature onto Binance Chain, it is a hard decision to make. The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. If that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on [Tendermint](https://tendermint.com/core/), based on the current underlying consensus protocol and major [RPC](https://docs.binance.org/api-reference/node-rpc.html) implementation of Binance Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
+Despite this high demand for adding the Smart Contract feature onto Beacon Chain, it is a hard decision to make. The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. If that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on [Tendermint](https://tendermint.com/core/), based on the current underlying consensus protocol and major [RPC](https://docs.binance.org/api-reference/node-rpc.html) implementation of Beacon Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
 
-We propose a parallel blockchain of the current Binance Chain to retain the high performance of the native DEX blockchain and to support a friendly Smart Contract function at the same time.
+We propose a parallel blockchain of the current Beacon Chain to retain the high performance of the native DEX blockchain and to support a friendly Smart Contract function at the same time.
 
 # Design Principles
 
-After the creation of the parallel blockchain into the Binance Chain ecosystem, two blockchains will run side by side to provide different services. The new parallel chain will be called “**Binance Smart Chain**” (short as “**BSC**” for the below sections), while the existing mainnet remains named “**Binance Chain**” (short as “**BC**” for the below sections).
+After the creation of the parallel blockchain into the BNB Chain ecosystem, two blockchains will run side by side to provide different services. The new parallel chain will be called “**BNB Smart Chain**” (short as “**BSC**” for the below sections), while the existing mainnet will be named “**Beacon Chain**” (short as “**BC**” for the below sections).
 
 Here are the design principles of **BSC**:
 
@@ -101,13 +101,13 @@ Some parts of the gas fee will also be rewarded to relayers for Cross-Chain comm
 
 BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
 
-1. The same token can circulate on both networks, and flow between them bi-directionally     via a cross-chain communication mechanism.
+1. The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism.
 2. The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the     token’s total effective supply on both BSC and BC.
 3. The tokens can be initially created on BSC in a similar format as ERC20 token standard, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
 
 ## Native Token
 
-BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Binance Chain and Binance DEX, BNB will be also used to:
+BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Beacon Chain and Binance DEX, BNB will be also used to:
 
 1. pay “fees“ to deploy smart contracts on BSC
 2. stake on selected BSC validators, and get corresponding rewards
@@ -261,7 +261,7 @@ Proof of Staked Authority brings in decentralization and community involvement. 
 
 ## Staking on BC
 
-Ideally, such staking and reward logic should be built into the blockchain, and automatically executed as the blocking happens. Cosmos Hub, who shares the same Tendermint consensus and libraries with Binance Chain, works in this way.
+Ideally, such staking and reward logic should be built into the blockchain, and automatically executed as the blocking happens. Cosmos Hub, who shares the same Tendermint consensus and libraries with Beacon Chain, works in this way.
 
 BC has been preparing to enable staking logic since the design days. On the other side, as BSC wants to remain compatible with Ethereum as much as possible, it is a great challenge and efforts to implement such logic on it. This is especially true when Ethereum itself may move into a different Proof of Stake consensus protocol in a short (or longer) time. In order to keep the compatibility and reuse the good foundation of BC, the staking logic of BSC is implemented on BC:
 
@@ -341,7 +341,7 @@ Such oracle type relaying depends on all the validators to support. As all the v
 
 # Outlook
 
-It is hard to conclude for Binance Chain, as it has never stopped evolving. The dual-chain strategy is to open the gate for users to take advantage of the fast transferring and trading on one side, and flexible and extendable programming on the other side, but it will be one stop along the development of Binance Chain. Here below are the topics to look into so as to facilitate the community better for more usability and extensibility:
+It is hard to conclude for BNB Chain, as it has never stopped evolving. The dual-chain strategy is to open the gate for users to take advantage of the fast transferring and trading on one side, and flexible and extendable programming on the other side, but it will be one stop along the development of BNB Chain. Here below are the topics to look into so as to facilitate the community better for more usability and extensibility:
 
 1. Add different digital asset model for different business use cases
 2. Enable more data feed, especially DEX market data, to be communicated from Binance DEX to BSC
