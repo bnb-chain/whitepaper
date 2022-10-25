@@ -1,4 +1,4 @@
-# Binance Smart Chain White Paper
+# BNB Smart Chain White Paper
 
 ## Revision
 
