@@ -31,7 +31,7 @@ _NOTE: This document is under development. Please check regularly for updates!_
 - [Outlook](#outlook)
 # Motivation
 
-After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Beacon Chain](https://www.bnbchain.org/en) has exhibited its high speed and large throughput design. Beacon Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [Binance DEX](https://www.binance.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
+After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Beacon Chain](https://www.bnbchain.org/en) has exhibited its high speed and large throughput design. Beacon Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [BNB DEX](https://www.bnbchain.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
 
 Flexibility and usability are often in an inverse relationship with performance. The concentration on providing a convenient digital asset issuing and trading venue also brings limitations. Beacon Chain's most requested feature is the programmable extendibility, or simply the [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) and Virtual Machine functions. Digital asset issuers and owners struggle to add new decentralized features for their assets or introduce any sort of community governance and activities.
 
@@ -107,7 +107,7 @@ BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
 
 ## Native Token
 
-BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Beacon Chain and Binance DEX, BNB will be also used to:
+BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Beacon Chain and BNB DEX, BNB will be also used to:
 
 1. pay “fees“ to deploy smart contracts on BSC
 2. stake on selected BSC validators, and get corresponding rewards
@@ -344,7 +344,7 @@ Such oracle type relaying depends on all the validators to support. As all the v
 It is hard to conclude for BNB Chain, as it has never stopped evolving. The dual-chain strategy is to open the gate for users to take advantage of the fast transferring and trading on one side, and flexible and extendable programming on the other side, but it will be one stop along the development of BNB Chain. Here below are the topics to look into so as to facilitate the community better for more usability and extensibility:
 
 1. Add different digital asset model for different business use cases
-2. Enable more data feed, especially DEX market data, to be communicated from Binance DEX to BSC
+2. Enable more data feed, especially DEX market data, to be communicated from BNB DEX to BSC
 3. Provide interface and compatibility to integrate with Ethereum, including its further upgrade, and other blockchain
 4. Improve client side experience to manage wallets and use blockchain more  conveniently
 
