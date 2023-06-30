@@ -1,6 +1,6 @@
-# Binance Smart Chain
+# BNB Smart Chain
 
-**Isang Kahanay na Binance Chain para Mapatakbo ang mga Matalinong Kontrata**
+**Isang Kahanay na BNB Beacon Chain para Mapatakbo ang mga Matalinong Kontrata**
 
 _PAALALA: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng madalas para sa mga pagbabago!_
 
@@ -34,24 +34,24 @@ _PAALALA: Ang dokumentong ito ay kasalukuyang ginagawa. Mangyaring dumalaw ng ma
 
 # Pagganyak
 
-Matapos ang [paglunsad](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) sa mainnet noong Abril 2019, ipinamalas ng [Binance Chain](https://www.binance.org) ang disenyo nitong may mabilis at malaking throughput. Ang [Binance Dex](https://www.binance.org/trade) na isang katutubong [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) o “dApp” kung saan nakatuon ang pansin ng Binance Chain, ay nakapagpakita ng mababang pagkaantala sa pagtutugma at malaking kapasidad sa pamamagitan ng paghawak ng milyun-milyong dami ng kalakalan sa maikling panahon.
+Matapos ang [paglunsad](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) sa mainnet noong Abril 2019, ipinamalas ng [BNB Beacon Chain](https://www.bnbchain.org) ang disenyo nitong may mabilis at malaking throughput. Ang [BNB Beacon Chain Dex](https://www.bnbchain.org/trade) na isang katutubong [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) o “dApp” kung saan nakatuon ang pansin ng BNB Beacon Chain, ay nakapagpakita ng mababang pagkaantala sa pagtutugma at malaking kapasidad sa pamamagitan ng paghawak ng milyun-milyong dami ng kalakalan sa maikling panahon.
 
-Ang kakayahang umangkop at kakayahang magamit ay kadalasang may kabaligtarang relasyon sa kakayahang pagganap. Ang pagtutok sa pagbibigay ng isang madaling paraan ng pagkakaloob ng mga digital na asset at lugar ng pangangalakal ay nagdudulot din ng mga limitasyon. Ang pinakahinahanap na katangian ng Binance Chain ay ang programmable extendibility, o sa madaling salita ang [Matalinong Kontrata](https://en.wikipedia.org/wiki/Smart_contract) at Virtual Machine na mga kakayahan. Ang mga tagapagbigay ng mga digital na asset at mga nagmamay-ari nito ay nahihirapan sa pagdagdag ng mga bagong disentralisadong kakayahan para sa kanilang mga assets o magpakilala ng anumang uri ng pamamahala at mga aktibidad sa kanilang komunidad.
+Ang kakayahang umangkop at kakayahang magamit ay kadalasang may kabaligtarang relasyon sa kakayahang pagganap. Ang pagtutok sa pagbibigay ng isang madaling paraan ng pagkakaloob ng mga digital na asset at lugar ng pangangalakal ay nagdudulot din ng mga limitasyon. Ang pinakahinahanap na katangian ng BNB Beacon Chain ay ang programmable extendibility, o sa madaling salita ang [Matalinong Kontrata](https://en.wikipedia.org/wiki/Smart_contract) at Virtual Machine na mga kakayahan. Ang mga tagapagbigay ng mga digital na asset at mga nagmamay-ari nito ay nahihirapan sa pagdagdag ng mga bagong disentralisadong kakayahan para sa kanilang mga assets o magpakilala ng anumang uri ng pamamahala at mga aktibidad sa kanilang komunidad.
 
-Sa kabila ng mataas na pangangailangan na maglagay ng Matalinong Kontrata na katangian sa Binance Chain, isa itong mahirap na desisyon. Ang pagtakbo ng isang Matalinong Kontrata ay maaaring makapagpabagal ng kalakalan at magdagdag ng mga hindi matukoy na aspeto sa pangangalakal. Kung kayang tiisin ang kompromiso na maidudulot nito, maaaring maging isang tapat na ideya ang ipakilala ang isang bagong Virtual Machine na may mga katangian na batay sa [Tendermint](https://tendermint.com/core/), batay sa kasalukuyang protokol ng pagkakasunduan at sa pangunahing pagpapatakbo ng [RPC](https://docs.binance.org/api-reference/node-rpc.html) ng Binance Chain. Pero ang lahat ng ito ay magpapataas ng mga kinakailangan sa pag-aaral ng lahat ng mga aktibong mga komunidad ng dApp, at posibleng hindi masyadong malugod na tanggapin.
+Sa kabila ng mataas na pangangailangan na maglagay ng Matalinong Kontrata na katangian sa BNB Beacon Chain, isa itong mahirap na desisyon. Ang pagtakbo ng isang Matalinong Kontrata ay maaaring makapagpabagal ng kalakalan at magdagdag ng mga hindi matukoy na aspeto sa pangangalakal. Kung kayang tiisin ang kompromiso na maidudulot nito, maaaring maging isang tapat na ideya ang ipakilala ang isang bagong Virtual Machine na may mga katangian na batay sa [Tendermint](https://tendermint.com/core/), batay sa kasalukuyang protokol ng pagkakasunduan at sa pangunahing pagpapatakbo ng [RPC](https://docs.bnbchain.org/docs/beaconchain/develop/rpc) ng BNB Beacon Chain. Pero ang lahat ng ito ay magpapataas ng mga kinakailangan sa pag-aaral ng lahat ng mga aktibong mga komunidad ng dApp, at posibleng hindi masyadong malugod na tanggapin.
 
-Ipinapanukala namin ang isang kahanay na blockchain ng kasalukuyang Binance Chain para mapanatili ang mataas na kakayahang pagganap ng katutubong DEX blockchain habang suportado ang isang madaling gamitin na Matalinong Kontrata na kakayahan.
+Ipinapanukala namin ang isang kahanay na blockchain ng kasalukuyang BNB Beacon Chain para mapanatili ang mataas na kakayahang pagganap ng katutubong DEX blockchain habang suportado ang isang madaling gamitin na Matalinong Kontrata na kakayahan.
 
 # Mga Prinsipyo ng Disenyo
 
-Matapos ang paglikha ng kahanay na blockchain sa Binance Chain ecosystem, dalawang blockchain ang tatakbo ng sabay para magbigay ng iba't ibang mga serbisyo. Ang bagong kahanay na kadena ay tatawaging “**Binance Smart Chain**” (pinaikli na “**BSC**” para sa mga seksyon sa ibaba), habang ang umiiral na mainnet ay tatawagin pa rin na “**Binance Chain**” (pinaikli na “**BC**” para sa mga seksyon sa ibaba).
+Matapos ang paglikha ng kahanay na blockchain sa BNB Beacon Chain ecosystem, dalawang blockchain ang tatakbo ng sabay para magbigay ng iba't ibang mga serbisyo. Ang bagong kahanay na kadena ay tatawaging “**BNB Smart Chain**” (pinaikli na “**BSC**” para sa mga seksyon sa ibaba), habang ang umiiral na mainnet ay tatawagin pa rin na “**BNB Beacon Chain**” (pinaikli na “**BC**” para sa mga seksyon sa ibaba).
 
 Narito ang mga prinsipyo ng disenyo ng **BSC**:
 
 1. **Malayang Blockchain**: Sa panteknikal na salita, ang BSC ay isang nagsasariling blockchain, sa halip na isang layer-2 na solusyon. Karamihan sa mga pangunahing kakayahan ng BSC na panteknikal at pang-negosyo ay dapat na umiiral sa loob ng sarili niya para maaari pa rin itong tumakbo nang maayos kahit na huminto pansamantala ang BC ng maikling panahon.
 2. **Pagkatugma sa Ethereum**: Ang unang praktikal at malawak na ginagamit na platform para sa Matalinong Kontrata ay ang Ethereum. Upang samantalahin ang medyo maunlad na mga aplikasyon at komunidad nito, pinili ng BSC na maging katugma sa umiiral na Ethereum mainnet. Nangangahulugan ito na ang karamihan sa **dApps**, mga bahagi ng ecosystem, at mga iba't ibang kasangkapan ay gagana sa BSC at mangangailangan ng wala o kaunti lang na mga pagbabago; Mangangailangan ang BSC node ng katulad (o medyo mas mataas) na katangian ng hardware at kakayahan para tumakbo at mapatakbo. Ang ganitong pagpapatupad ay dapat mag-iwan ng lugar para sa BSC na makahabol sa karagdagang mga pagsulong ng Ethereum.
 3. **Pagtaya na Kaakibat sa Pagkakasundo at Pamamahala**: Ang pagkakasundo na nakabase sa Pagtaya ay mas mainam sa kapaligiran at nag-iiwan ng mas may kakayahang umangkop na pamamaraan sa pamamahala ng komunidad. Inaasahan na ang ganitong uri ng pakakasundo ay kayang magbigay ng mas mahusay na kakayahang pagganap ng network kaysa [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) na sistema ng blockchain, hal. mabilis na oras ng pagbuo ng bloke at mas mataas na kapasidad sa transaksyon.
-4. **Katutubong Cross-Chain na Komunikasyon**: Ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa cross-chain na komunikasyon sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga tokens na BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lang.
+4. **Katutubong Cross-Chain na Komunikasyon**: Ang BC at BSC ay parehong papatakbuhin na may sariling suporta para sa cross-chain na komunikasyon sa pagitan ng dalawang mga blockchain. Ang protocol ng komunikasyon nila ay dapat na bi-directional, desentralisado, at di nangangailangan ng tiwala. Tututukan nito ang paglipat ng mga digital na assets sa pagitan ng BC at BSC, ibig sabihin, ang [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) na mga token, at kalaunan, iba pang mga tokens na BEP na ipapakilala sa paglaon. Dapat pangalagaan ng protocol ang minimum ng iba pang mga bagay na nakalagay sa estado ng mga blockchain, na may ilang mga pagbubukod lang.
 
 # Pagkakasunduan at Korum ng mga Tagapagpatunay
 
@@ -110,7 +110,7 @@ Ang BC at BSC ay naghahati sa parehong sandaigdig ng token para sa mga tokens na
 
 ## Katutubong Token
 
-Ang BNB ay tatakbo sa BSC sa parehong paraan tulad ng ETH na tumatakbo sa Ethereum para manatili ito bilang "katutubong token" para sa parehong BSC at BC. Nangangahulugan ito, bilang karagdagan sa BNB na ginagamit para bayaran ang karamihan sa mga bayarin sa Binance Chain at Binance DEX, gagamitin din ang BNB para:
+Ang BNB ay tatakbo sa BSC sa parehong paraan tulad ng ETH na tumatakbo sa Ethereum para manatili ito bilang "katutubong token" para sa parehong BSC at BC. Nangangahulugan ito, bilang karagdagan sa BNB na ginagamit para bayaran ang karamihan sa mga bayarin sa BNB Beacon Chain at BNB DEX, gagamitin din ang BNB para:
 
 1. magbayad ng "bayarin" para makapag lunsad ng mga matalinong kontrata sa BSC
 2. itaya sa mga piling tagapagpatunay ng BSC, at makakuha ng kaukulang gantimpala
@@ -124,7 +124,7 @@ Ang BNB cross-chain na paglipat ay tinalakay sa isang susunod na seksyon, pero p
 
 ## Iba Pang Mga Token
 
-Sinusuportahan ng BC ang mga tokens na BEP2 at paparating na [mga tokens na BEP8](https://github.com/binance-chain/BEPs/pull/69), na mga katutubong asset na maililipat at maibebenta (kung nakalista) sa pamamagitan ng mabilis na mga transaksyon at mababa sa isang segundong kawakasan. Samantala, dahil ang BSC ay katugma sa Ethereum, natural na suportahan ang mga tokens na ERC20 sa BSC, na kung saan dito ay tinatawag na “**BEP2E**” (na ang tunay na pangalan ay ipapakilala ng mga BEP sa hinaharap, potensyal itong sumasakop din sa BEP8). Ang BEP2E ay maaaring "Pinahusay" sa pamamagitan ng pagdaragdag ng ilang mga kakayahan para mailantad ang higit pang impormasyon, tulad ng denominasyon ng token, kahulugan ng katumpakan ng desimal at ang address ng may-ari na maaaring magpasya sa Token Binding sa mga kadena. Ang BSC at BC ay nagtutulungan para matiyak na ang isang token ay maaaring umikot sa parehong ayos na may kumpirmadong kabuuang panustos at magagamit sa iba't ibang mga kaso ng paggamit.
+Sinusuportahan ng BC ang mga tokens na BEP2 at paparating na [mga tokens na BEP8](https://github.com/bnb-chain/BEPs/pull/69), na mga katutubong asset na maililipat at maibebenta (kung nakalista) sa pamamagitan ng mabilis na mga transaksyon at mababa sa isang segundong kawakasan. Samantala, dahil ang BSC ay katugma sa Ethereum, natural na suportahan ang mga tokens na ERC20 sa BSC, na kung saan dito ay tinatawag na “**BEP2E**” (na ang tunay na pangalan ay ipapakilala ng mga BEP sa hinaharap, potensyal itong sumasakop din sa BEP8). Ang BEP2E ay maaaring "Pinahusay" sa pamamagitan ng pagdaragdag ng ilang mga kakayahan para mailantad ang higit pang impormasyon, tulad ng denominasyon ng token, kahulugan ng katumpakan ng desimal at ang address ng may-ari na maaaring magpasya sa Token Binding sa mga kadena. Ang BSC at BC ay nagtutulungan para matiyak na ang isang token ay maaaring umikot sa parehong ayos na may kumpirmadong kabuuang panustos at magagamit sa iba't ibang mga kaso ng paggamit.
 
 ### Pagbigkis ng Token
 
@@ -265,7 +265,7 @@ Ang Patunay ng Itinayang Awtoridad ay nagdudulot ng desentralisasyon at paglahok
 
 ## Pagtaya sa BC
 
-Mas mainam na ang naturang lohika ng pagtaya at gantimpala ay dapat na parte na blockchain, at awtomatikong pinapatupad habang nangyayari ang pag-bloke. Ang Cosmos Hub, na nagbabahagi ng parehong Tendermint na pagkakasunduan at mga librerya sa Binance Chain, ay gumagana sa ganitong paraan.
+Mas mainam na ang naturang lohika ng pagtaya at gantimpala ay dapat na parte na blockchain, at awtomatikong pinapatupad habang nangyayari ang pag-bloke. Ang Cosmos Hub, na nagbabahagi ng parehong Tendermint na pagkakasunduan at mga librerya sa BNB Beacon Chain, ay gumagana sa ganitong paraan.
 
 Naghahanda ang BC para paganahin ang lohika ng pagtaya mula pa noong mga araw ng pagdisenyo nito. Sa kabilang panig, tulad ng nais ng BSC na manatiling katugma sa Ethereum hangga't maaari, ito ay isang malaking hamon at pagsisikap na ipatupad ang naturang lohika dito. Totoo ito lalo na kapag ang Ethereum mismo ay maaaring lumipat sa ibang Patunay ng Taya na protokol ng pagkakasunduan sa isang maikling (o mas matagal) na oras. Upang mapanatili ang pagiging tugma at magamit ulit ang magandang pundasyon ng BC, ang lohika ng pagtyaa ng BSC ay ipinatupad sa BC:
 
@@ -345,10 +345,10 @@ Ang nasabing orakulong uri ng paghatid ay nakasalalay sa lahat ng mga tagapagpat
 
 # Pananaw
 
-Mahirap magtapos para sa Binance Chain, dahil hindi ito tumitigil sa pag-unlad. Ang diskarte sa dalawahang kadena ay para buksan ang pintuan para sa mga user para samantalahin ang mabilis na paglilipat at pakikipagkalakalan sa isang panig, at may kakayahang umangkop at napapalawak na pag-program sa kabilang panig, pero ito ay magiging isang hintuan sa pagbuo ng Binance Chain. Nasa ibaba ang mga paksang maaaring tingnan para mas mapadali ang komunidad para sa mas higit pa na kakayahang magamit at mapalawak:
+Mahirap magtapos para sa BNB Beacon Chain, dahil hindi ito tumitigil sa pag-unlad. Ang diskarte sa dalawahang kadena ay para buksan ang pintuan para sa mga user para samantalahin ang mabilis na paglilipat at pakikipagkalakalan sa isang panig, at may kakayahang umangkop at napapalawak na pag-program sa kabilang panig, pero ito ay magiging isang hintuan sa pagbuo ng BNB Chain. Nasa ibaba ang mga paksang maaaring tingnan para mas mapadali ang komunidad para sa mas higit pa na kakayahang magamit at mapalawak:
 
 1. Magdagdag ng iba't ibang modelo ng digital na asset para sa iba't ibang mga kaso ng paggamit sa negosyo
-2. Paganahin ang mas marami pang pinagkukunan ng mga datos, lalo na ang mga datos ng merkado ng DEX, na ipaparating mula sa Binance DEX patungo sa BSC
+2. Paganahin ang mas marami pang pinagkukunan ng mga datos, lalo na ang mga datos ng merkado ng DEX, na ipaparating mula sa BNB Beacon Chain DEX patungo sa BSC
 3. Magbigay ng interface at pagiging tugma para ma-integrate sa Ethereum, kasama ang karagdagang pagsulong, at iba pang blockchain
 4. Pagbutihin ang karanasan sa panig ng kliyente sa pangangasiwa ng mga pitaka at sa mas madaling paggamit ng blockchain
 

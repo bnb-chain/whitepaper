@@ -1,4 +1,4 @@
-Binance Smart Chain: Una cadena de bloques paralela de Binance orientada a posibilitar Contratos Inteligentes
+BNB Smart Chain: Una cadena de bloques paralela de BNB Beacon Chain orientada a posibilitar Contratos Inteligentes
 
 Versión 0.1
 
@@ -12,17 +12,17 @@ PhD. Federico Ignacio Viola
 
 # Motivación
 
-Después de su lanzamiento en la mainnet comunitaria en abril de 2019, Binance Chain ha exhibido una alta velocidad y un diseño de alto rendimiento. El foco primario de la cadena de bloques de Binance, su aplicación nativa descentralizada ("dApp") Binance DEX, ha demostrado baja latencia en correspondencia con su margen de gran capacidad de gestión en poco tiempo de un volumen millonario de transacciones.
+Después de su lanzamiento en la mainnet comunitaria en abril de 2019, BNB Beacon Chain ha exhibido una alta velocidad y un diseño de alto rendimiento. El foco primario de la cadena de bloques de BNB, su aplicación nativa descentralizada ("dApp") BNB DEX, ha demostrado baja latencia en correspondencia con su margen de gran capacidad de gestión en poco tiempo de un volumen millonario de transacciones.
 
-Flexibilidad y usabilidad están a menudo en relación inversa respecto del desempeño. Puesto el foco en proveer el espacio conveniente para emitir y negociar activos digitales trae también consigo limitaciones La característica más requerida para la cadena de bloques Binance es la extensibilidad programable o simplemente las funciones de contratos inteligentes y máquinas virtuales. Los emisores y propietarios de activos se esfuerzan para agregar nuevas funciones descentralizadas para dichos activos o para introducir cualquier forma de gobernanza y actividades comunitarias.
+Flexibilidad y usabilidad están a menudo en relación inversa respecto del desempeño. Puesto el foco en proveer el espacio conveniente para emitir y negociar activos digitales trae también consigo limitaciones La característica más requerida para la cadena de bloques BNB es la extensibilidad programable o simplemente las funciones de contratos inteligentes y máquinas virtuales. Los emisores y propietarios de activos se esfuerzan para agregar nuevas funciones descentralizadas para dichos activos o para introducir cualquier forma de gobernanza y actividades comunitarias.
 
-A pesar de la alta demanda de introducir la función de contratos inteligentes en la Binance Chain, no se trata de una decisión fácil de tomar La ejecución de un contrato inteligente podría ralentizar la función de intercambio y sumar un factores no deterministas a las negociaciones. Si se pudiera ser tolerante y ceder, la idea más sencilla sería introducir una nueva especificación de máquina virtual basada en Tendermint, basada en el actual protocolo de consenso subyacente y la implementación principal RPC de la Binance Chain. Pero todo esto incrementaría los requerimientos de aprendizajes para todas las comunidades dApp existentes y no sería muy bienvenido.
+A pesar de la alta demanda de introducir la función de contratos inteligentes en la BNB Beacon Chain, no se trata de una decisión fácil de tomar La ejecución de un contrato inteligente podría ralentizar la función de intercambio y sumar un factores no deterministas a las negociaciones. Si se pudiera ser tolerante y ceder, la idea más sencilla sería introducir una nueva especificación de máquina virtual basada en Tendermint, basada en el actual protocolo de consenso subyacente y la implementación principal RPC de la BNB Beacon Chain. Pero todo esto incrementaría los requerimientos de aprendizajes para todas las comunidades dApp existentes y no sería muy bienvenido.
 
-Proponemos una blockchain que sea paralela a la actual Binance Chain para mantener el alto rendimiento de la blockchain DEX y para respaldar, al mismo tiempo, una función amigable de contratos inteligentes.
+Proponemos una blockchain que sea paralela a la actual BNB Beacon Chain para mantener el alto rendimiento de la blockchain DEX y para respaldar, al mismo tiempo, una función amigable de contratos inteligentes.
 
 # Criterios de Diseño
 
-Después de la creación de la blockchain paralela en el ecosistema de la Binance Chain, dos cadenas de bloques operarán una junto a la otra para proporcionar diferentes servicios. La nueva cadena paralela se llamará "**Binance Smart Chain**" (abreviada **"BSC" para las secciones posteriores**), mientras que la mainnet existente continuará siendo denominada "**Binance Chain**" (abreviada **"BC" para las secciones posteriores**).
+Después de la creación de la blockchain paralela en el ecosistema de la BNB Beacon Chain, dos cadenas de bloques operarán una junto a la otra para proporcionar diferentes servicios. La nueva cadena paralela se llamará "**BNB Smart Chain**" (abreviada **"BSC" para las secciones posteriores**), mientras que la mainnet existente continuará siendo denominada "**BNB Beacon Chain**" (abreviada **"BC" para las secciones posteriores**).
 
 He aquí los principios de diseño de la BSC:
 
@@ -89,7 +89,7 @@ BC y BSC comparten el mismo universo de tokens para los tokens BNB y BEP2 Esto d
 
 ## Token Nativo
 
-BNB se ejecutará en la BSC de la misma forma que ETH se ejecuta en Ethereum, de manera que continúe siendo un "token nativo" tanto para la BSC como para la BC. Esto siginifica por lo demás que BNB, utilizado para pagar la mayoría de las tarifas en Binance Chain y Binance DEX, se utilizará ademas para:
+BNB se ejecutará en la BSC de la misma forma que ETH se ejecuta en Ethereum, de manera que continúe siendo un "token nativo" tanto para la BSC como para la BC. Esto siginifica por lo demás que BNB, utilizado para pagar la mayoría de las tarifas en BNB Beacon Chain y BNB DEX, se utilizará ademas para:
 
 1. pagar "gas" para implementar contratos inteligentes en la BSC.
 2. hacer staking respecto de validadores BSC escogidos y obtener las recompensas correspondientes.
@@ -103,7 +103,7 @@ La transferencia entrecruzada de cadena de bloques será discutida en una secci�
 
 ## Otros tokens
 
-BC admite tokens BEP2 y los futuros [tokens BEP8 ](https://github.com/binance-chain/BEPs/pull/69)que son activos nativos transferibles y negociables (una vez enlistados) mediante transacciones rápidas y con un tiempo de finalización inferior a un segundo Mientras tanto, como la BSC es compatible con Ethereum, es lógico admitir tokens ERC20 en ella, los mismos se denominarán aquí "**BEP2E**" (con el nombre real que será introducido por los futuros BEPs potencialmente también abarcará asimismo el BEP8). BEP2E podría ser "mejorado" agregandole algunos pocos métodos para exhibir más información como ser la denominación del token, la definición de precisión decimal y la dirección del propietario que puede decidir el enlace del token (Token Binding) a lo largo de las cadenas. BSC y BC trabajan juntas para garantizar que un token pueda circular en ambos formatos con una provisión total confirmada y ser utilizados en diferentes casos de usos.
+BC admite tokens BEP2 y los futuros [tokens BEP8 ](https://github.com/bnb-chain/BEPs/pull/69)que son activos nativos transferibles y negociables (una vez enlistados) mediante transacciones rápidas y con un tiempo de finalización inferior a un segundo Mientras tanto, como la BSC es compatible con Ethereum, es lógico admitir tokens ERC20 en ella, los mismos se denominarán aquí "**BEP2E**" (con el nombre real que será introducido por los futuros BEPs potencialmente también abarcará asimismo el BEP8). BEP2E podría ser "mejorado" agregandole algunos pocos métodos para exhibir más información como ser la denominación del token, la definición de precisión decimal y la dirección del propietario que puede decidir el enlace del token (Token Binding) a lo largo de las cadenas. BSC y BC trabajan juntas para garantizar que un token pueda circular en ambos formatos con una provisión total confirmada y ser utilizados en diferentes casos de usos.
 
 ### Enlace de Tokens
 
@@ -161,7 +161,7 @@ El mensaje del paquete de transferencia de entrecruzamiento de cadenas de bloque
 2. Que se libera el monto adecuado de activos tokens de una dirección/contrato controlado por sistema y que se asignan a las direcciones destinadas en la cadena de bloques de destino. Si hay una falla, debe poder ser confirmada en la cadena de bloques de origen, de manera que el token bloqueado pueda ser liberado de vuelta (esto podría acarrear un costo).
 3. La suma de la circulación total de los activos de token en las dos cadenas de bloques no cambia luego de que se cumple esta acción de transferencia; no importa si la transferencia es exitosa o no.
 
-![grafico_binance](../assets/grafico_binance.png)
+![cross-chain](../assets/cross-chain.png)
 
 La arquitectura de comunicación entrecruzada entre cadenas es como está representada en el diagrama aquí arriba. Para adaptar ambos sistemas heterónomos, el manejo de la comunicación difiere en cada dirección.
 
@@ -253,7 +253,7 @@ La autoridad de la Prueba-de-participación (Proof-of-Stake) acarrea consigo la 
 
 ## Haciendo staking en la BC
 
-Idealmente, dicha lógica de staking y recompensa debería estar integrada en la cadena de bloques y ejecutarse automáticamente en la medida en que se van formando los bloques. Cosmos Hub, el cual comparte la misma forma de consenso que Tendermint y las mismas librerías que Binance Chain, opera de esta forma.
+Idealmente, dicha lógica de staking y recompensa debería estar integrada en la cadena de bloques y ejecutarse automáticamente en la medida en que se van formando los bloques. Cosmos Hub, el cual comparte la misma forma de consenso que Tendermint y las mismas librerías que BNB Beacon Chain, opera de esta forma.
 
 La BC ha sido preparada para habilitar la lógica de staking desde los primeros días de su diseño. Por otro lado, en cuanto la BSC quiere seguir siendo compatible con Ethereum tanto cuanto sea posible, esto conlleva un gran desafío a la vez que un gran esfuerzo para implementar dicha lógica en ella. Esto es así especialmente en cuanto que el mismo Ethereum podría modificar su forma de protocolo de consenso de Proof of Stake en un corto (o largo) plazo. En orden a mantener la compatibilidad y a reutilizar el beneficioso fundamento de la BC, la lógica de staking de la BSC se implementa en la BC:
 
@@ -333,9 +333,9 @@ Este tipo de transmisión oracular depende del respaldo de todos los validadores
 
 # Perspectivas
 
-Es difícil arribar a una conclusión respecto de la Binance Chain ya que nunca ha dejado de evolucionar. La estrategia de una cadena dual consiste en abrir la puerta para que los usuarios aprovechen negociaciones y transferencias rápidas, por un lado, y por el otro, para permitir una programación flexible y extensible, pero esto constituirá tan sólo una parada a lo largo del desarrollo de la Binance Chain. A continuación de exponen los temas que se deben analizar en orden a facilitar la mejoría de la comunidad para una mayor usabilidad y extensibilidad:
+Es difícil arribar a una conclusión respecto de la BNB Beacon Chain ya que nunca ha dejado de evolucionar. La estrategia de una cadena dual consiste en abrir la puerta para que los usuarios aprovechen negociaciones y transferencias rápidas, por un lado, y por el otro, para permitir una programación flexible y extensible, pero esto constituirá tan sólo una parada a lo largo del desarrollo de la BNB Beacon Chain. A continuación de exponen los temas que se deben analizar en orden a facilitar la mejoría de la comunidad para una mayor usabilidad y extensibilidad:
 
 1. Agregar modelos diferentes de activos digitales para diferentes casos de uso comercial.
-2. Permitir una mayor comunicación de datos, especialmente datos de mercado DEX, para que puedan ser comunicados desde el Binance DEX a la BSC.
+2. Permitir una mayor comunicación de datos, especialmente datos de mercado DEX, para que puedan ser comunicados desde el BNB DEX a la BSC.
 3. Proporcionar interfaz y compatibilidad para integrarse con Ethereum, incluyendo sus futuras actualizaciones, y con otras cadenas de bloques
 4. Mejorar la experiencia del lado del cliente para administrar billeteras y para usar la cadena de bloques de una manera más conveniente.
