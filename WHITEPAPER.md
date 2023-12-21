@@ -157,7 +157,7 @@ A typical procedure to bind the BEP2 and BEP2E will be like the below:
 Cross-chain communication is the key foundation to allow the community to take advantage of the dual chain structure:
 
 * users are free to create any tokenization, financial products, and digital assets on BSC or BC as they wish
-* the items on BSC can be manually and programmingly traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC
+* the items on BSC can be manually and programmatically traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC
 * users can operate these in one UI and tooling ecosystem.
 
 ## Cross-Chain Transfer
