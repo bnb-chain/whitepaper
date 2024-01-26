@@ -1,5 +1,5 @@
-# Binance Smart Chain
-**A Parallel Binance Chain to Enable Smart Contracts**
+# BNB Smart Chain
+**A Parallel Blockchain to Beacon Chain to Enable Smart Contracts**
 
 _NOTE: This document is under development. Please check regularly for updates!_
 
@@ -31,24 +31,24 @@ _NOTE: This document is under development. Please check regularly for updates!_
 - [Outlook](#outlook)
 # Motivation
 
-After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Binance Chain](binance.org) has exhibited its high speed and large throughput design. Binance Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [Binance DEX](https://www.binance.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
+After its mainnet community [launch](https://www.binance.com/en/blog/327334696200323072/Binance-DEX-Launches-on-Binance-Chain-Invites-Further-Community-Development) in April 2019, [Beacon Chain](https://www.bnbchain.org/en) has exhibited its high speed and large throughput design. Beacon Chain’s primary focus, its native [decentralized application](https://en.wikipedia.org/wiki/Decentralized_application) (“dApp”) [BNB DEX](https://www.bnbchain.org/trade), has demonstrated its low-latency matching with large capacity headroom by handling millions of trading volume in a short time.
 
-Flexibility and usability are often in an inverse relationship with performance. The concentration on providing a convenient digital asset issuing and trading venue also brings limitations. Binance Chain's most requested feature is the programmable extendibility, or simply the [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) and Virtual Machine functions. Digital asset issuers and owners struggle to add new decentralized features for their assets or introduce any sort of community governance and activities.
+Flexibility and usability are often in an inverse relationship with performance. The concentration on providing a convenient digital asset issuing and trading venue also brings limitations. Beacon Chain's most requested feature is the programmable extendibility, or simply the [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) and Virtual Machine functions. Digital asset issuers and owners struggle to add new decentralized features for their assets or introduce any sort of community governance and activities.
 
-Despite this high demand for adding the Smart Contract feature onto Binance Chain, it is a hard decision to make. The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. If that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on [Tendermint](https://tendermint.com/core/), based on the current underlying consensus protocol and major [RPC](https://docs.binance.org/api-reference/node-rpc.html) implementation of Binance Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
+Despite this high demand for adding the Smart Contract feature onto Beacon Chain, it is a hard decision to make. The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. If that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on [Tendermint](https://tendermint.com/core/), based on the current underlying consensus protocol and major [RPC](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/node-rpc) implementation of Beacon Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
 
-We propose a parallel blockchain of the current Binance Chain to retain the high performance of the native DEX blockchain and to support a friendly Smart Contract function at the same time.
+We propose a parallel blockchain of the current Beacon Chain to retain the high performance of the native DEX blockchain and to support a friendly Smart Contract function at the same time.
 
 # Design Principles
 
-After the creation of the parallel blockchain into the Binance Chain ecosystem, two blockchains will run side by side to provide different services. The new parallel chain will be called “**Binance Smart Chain**” (short as “**BSC**” for the below sections), while the existing mainnet remains named “**Binance Chain**” (short as “**BC**” for the below sections).
+After the creation of the parallel blockchain into the BNB Chain ecosystem, two blockchains will run side by side to provide different services. The new parallel chain will be called “**BNB Smart Chain**” (short as “**BSC**” for the below sections), while the existing mainnet will be named “**Beacon Chain**” (short as “**BC**” for the below sections).
 
 Here are the design principles of **BSC**:
 
 1. **Standalone Blockchain**: technically, BSC is a standalone blockchain, instead of a layer-2 solution. Most BSC fundamental  technical and business functions should be self-contained so that it can     run well even if the BC stopped for a short period.
 2. **Ethereum  Compatibility**: The first practical and widely-used Smart Contract platform is Ethereum. To take advantage of the relatively mature applications and community, BSC chooses to be compatible with the existing Ethereum mainnet. This means most of the **dApps**, ecosystem components, and toolings will work with BSC and require zero or minimum changes; BSC node will require similar (or a bit higher) hardware specification and skills to run and operate. The implementation should leave room for BSC to catch up with further Ethereum upgrades.
 3. **Staking Involved  Consensus and Governance**: Staking-based consensus is more environmentally friendly and leaves more flexible option to the community governance. Expectedly, this consensus should enable better network performance over [proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) blockchain system, i.e., faster blocking time and higher transaction capacity.
-4. **Native Cross-Chain Communication**: both BC and BSC will be implemented with native support for cross-chain communication among the two blockchains. The communication protocol should be bi-directional, decentralized, and trustless. It will concentrate on moving digital assets between BC and BSC, i.e., [BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) tokens, and eventually, other BEP tokens introduced later. The protocol should care for the minimum of other items stored in the state of the blockchains, with only a few exceptions.
+4. **Native Cross-Chain Communication**: both BC and BSC will be implemented with native support for cross-chain communication among the two blockchains. The communication protocol should be bi-directional, decentralized, and trustless. It will concentrate on moving digital assets between BC and BSC, i.e., [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) tokens, and eventually, other BEP tokens introduced later. The protocol should care for the minimum of other items stored in the state of the blockchains, with only a few exceptions.
 
 # Consensus and Validator Quorum
 
@@ -87,7 +87,7 @@ While producing further blocks, the existing BSC validators check whether there 
 
 Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the “[Clone Attack](https://arxiv.org/pdf/1902.10244.pdf)”. To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔\*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.
 
-With 21 validators, if the block time is 5 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)*5 = 75 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce **Slashing** logic to penalize Byzantine validators for **double signing** or **inavailability**, which will be covered in the “Staking and Governance” section later. This Slashing logic will expose the malicious validators in a very short time and make the “Clone Attack” very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+With 21 validators, if the block time is 5 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)*5 = 75 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce **Slashing** logic to penalize Byzantine validators for **double signing** or **unavailability**, which will be covered in the “Staking and Governance” section later. This Slashing logic will expose the malicious validators in a very short time and make the “Clone Attack” very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
 
 ## Reward
 
@@ -101,13 +101,13 @@ Some parts of the gas fee will also be rewarded to relayers for Cross-Chain comm
 
 BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
 
-1. The same token can circulate on both networks, and flow between them bi-directionally     via a cross-chain communication mechanism.
+1. The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism.
 2. The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the     token’s total effective supply on both BSC and BC.
 3. The tokens can be initially created on BSC in a similar format as ERC20 token standard, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
 
 ## Native Token
 
-BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Binance Chain and Binance DEX, BNB will be also used to:
+BNB will run on BSC in the same way as ETH runs on Ethereum so that it remains as “native token” for both BSC and BC. This means, in addition to BNB is used to pay most of the fees on Beacon Chain and BNB DEX, BNB will be also used to:
 
 1. pay “fees“ to deploy smart contracts on BSC
 2. stake on selected BSC validators, and get corresponding rewards
@@ -121,7 +121,7 @@ The BNB cross-chain transfer is discussed in a later section, but for BC to BSC 
 
 ## Other Tokens
 
-BC supports BEP2 tokens and upcoming [BEP8 tokens](https://github.com/binance-chain/BEPs/pull/69), which are native assets transferrable and tradable (if listed) via fast transactions and sub-second finality. Meanwhile, as BSC is Ethereum compatible, it is natural to support ERC20 tokens on BSC, which here is called “**BEP2E**” (with the real name to be introduced by the future BEPs,it potentially covers BEP8 as well). BEP2E may be “Enhanced” by adding a few more methods to expose more information, such as token denomination, decimal precision definition and the owner address who can decide the Token Binding across the chains. BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases.
+BC supports BEP2 tokens and upcoming [BEP8 tokens](https://github.com/bnb-chain/BEPs/pull/69), which are native assets transferrable and tradable (if listed) via fast transactions and sub-second finality. Meanwhile, as BSC is Ethereum compatible, it is natural to support ERC20 tokens on BSC, which here is called “**BEP2E**” (with the real name to be introduced by the future BEPs,it potentially covers BEP8 as well). BEP2E may be “Enhanced” by adding a few more methods to expose more information, such as token denomination, decimal precision definition and the owner address who can decide the Token Binding across the chains. BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases.
 
 ### Token Binding
 
@@ -183,16 +183,16 @@ BC is a Tendermint-based, instant finality blockchain. Validators with at least 
 
 BC-to-BSC communication will be verified in an “**on-chain light client**” implemented via BSC **Smart Contracts** (some of them may be **“pre-compiled”**). After some transactions and state change happen on BC, if a transaction is defined to trigger cross-chain communication,the Cross-chain “**package**” message will be created and **BSC Relayers** will pass and submit them onto BSC as data into the "build-in system contracts". The build-in system contracts will verify the package and execute the transactions if it passes the verification. The verification will be guaranteed with the below design:
 
-1. BC blocking status will be synced to the light client contracts on BSC from time to time, via     block header and pre-commits, for the below information:
+1. BC blocking status will be synced to the light client contracts on BSC from time to time, via block header and pre-commits, for the below information:
     * block and app hash of BC that are signed by validators
     * current validatorset, and validator set update
 
-2. the key-value from the blockchain state will be verified based on the Merkle     Proof and information from above #1.
+2. the key-value from the blockchain state will be verified based on the Merkle Proof and information from above #1.
 
 After confirming the key-value is accurate and trustful, the build-in system contracts will execute the actions corresponding to the cross-chain packages. Some examples of such packages that can be created for BC-to-BSC are:
 
 1. Bind: bind the BEP2 tokens and BEP2E
-2. Transfer: transfer tokens after binding, this means the circulation will decrease (be locked)     from BC and appear in the target address balance on BSC
+2. Transfer: transfer tokens after binding, this means the circulation will decrease (be locked) from BC and appear in the target address balance on BSC
 3. Error Handling: to handle any timeout/failure event for BSC-to-BC communication
 4. Validatorset update of BSC
 
@@ -204,10 +204,10 @@ For relayers, please also refer to the below “Relayers” section.
 
 BSC uses Proof of Staked Authority consensus protocol, which has a chance to fork and requires confirmation of more blocks. One block only has the signature of one validator, so that it is not easy to rely on one block to verify data from BSC.
 
-To take full advantage of validator quorum of BC, an idea similar to many [Bridge ](https://github.com/poanetwork/poa-bridge)or Oracle blockchains is adopted:
+To take full advantage of validator quorum of BC, an idea similar to many [Bridge](https://github.com/poanetwork/poa-bridge) or Oracle blockchains is adopted:
 
-1. The cross-chain communication requests from BSC will be submitted and executed onto BSC as transactions. The execution of the transanction wil emit `Events`, and such events can be observed and packaged in certain “**Oracle**” onto BC. Instead of Block Headers, Hash and Merkle Proof, this type of “Oracle” package directly contains the cross-chain information for actions, such as sender, receiver and amount for transfer.
-2. To ensure the security of the Oracle, the validators of BC will form anothe quorum of “**Oracle Relayers**”. Each validator of the BC should run a **dedicated process** as the Oracle Relayer. These Oracle Relayers will submit and  vote for the cross-chain communication package, like Oracle, onto BC,  using the same validator keys. Any package signed by more than ⅔\*N+1 Oracle Relayers’ voting power is as secure as any block signed by ⅔\*N+1 of     the same quorum of validators’ voting power.
+1. The cross-chain communication requests from BSC will be submitted and executed onto BSC as transactions. The execution of the transaction will emit `Events`, and such events can be observed and packaged in certain “**Oracle**” onto BC. Instead of Block Headers, Hash and Merkle Proof, this type of “Oracle” package directly contains the cross-chain information for actions, such as sender, receiver and amount for transfer.
+2. To ensure the security of the Oracle, the validators of BC will form another quorum of “**Oracle Relayers**”. Each validator of the BC should run a **dedicated process** as the Oracle Relayer. These Oracle Relayers will submit and  vote for the cross-chain communication package, like Oracle, onto BC,  using the same validator keys. Any package signed by more than ⅔\*N+1 Oracle Relayers’ voting power is as secure as any block signed by ⅔\*N+1 of     the same quorum of validators’ voting power.
 
 By using the same validator quorum, it saves the light client code on BC and continuous block updates onto BC. Such Oracles also have Oracle IDs and types, to ensure sequencing and proper error handling.
 
@@ -227,25 +227,25 @@ Ideally, users expect to use two parallel chains in the same way as they use one
 
 Cross-Chain Contract Event (CCCE) is designed to allow a smart contract to trigger cross-chain transactions, directly through the contract code. This becomes possible based on:
 
-1. Standard  system contracts can be provided to serve operations callable by general     smart contracts;
+1. Standard  system contracts can be provided to serve operations callable by general smart contracts;
 2. Standard  events can be emitted by the standard contracts;
 3. Oracle Relayers can capture the standard events, and trigger the corresponding cross-chain operations;
-4. Dedicated, code-managed address (account) can be created on BC and accessed by the     contracts on the BSC, here it is named as **“Contract Address on BC” (CAoB)**.
+4. Dedicated, code-managed address (account) can be created on BC and accessed by the contracts on the BSC, here it is named as **“Contract Address on BC” (CAoB)**.
 
 Several standard operations are implemented:
 
 1. BSC to BC transfer: this is implemented in the same way as normal BSC to BC transfer, by only triggered via standard contract. The fund can be transferred to any addresses on BC, including the corresponding CAoB of  the transfer originating contract.
 2. Transfer on BC: this is implemented as a special cross-chain transfer, while the  real transfer is from **CAoB** to any other address (even another CAoB).
-3. BC to BSC transfer: this is implemented as two-pass cross-chain communication. The     first is triggered by the BSC contract and propagated onto BC, and then in the second pass, BC will start a normal BC to BSC cross-chain transfer, from **CAoB** to contract address on BSC. A special note should be paid on that the BSC contract only increases balance upon any transfer coming in on the second pass, and the error handling in the second pass is the same as the normal BC to BSC transfer.
-4. IOC  (Immediate-Or-Cancel) Trade Out: the primary goal of transferring assets to BC is to trade. This event will instruct to trade a certain amount of an asset in CAoB into another asset as much as possible and transfer out     all the results, i.e. the left the source and the traded target tokens of     the trade, back to BSC. BC will handle such relayed events by sending an     “Immediate-Or-Cancel”, i.e. IOC order onto the trading pairs, once the next matching finishes, the result will be relayed back to BSC, which can be in either one or two assets.
-5. Auction Trade Out: Such event will instruct BC to send an auction order to trade a     certain amount of an asset in **CAoB** into another asset as much as possible and transfer out all the results back to BSC at the end of the auction. Auction function is upcoming on BC.
+3. BC to BSC transfer: this is implemented as two-pass cross-chain communication. The first is triggered by the BSC contract and propagated onto BC, and then in the second pass, BC will start a normal BC to BSC cross-chain transfer, from **CAoB** to contract address on BSC. A special note should be paid on that the BSC contract only increases balance upon any transfer coming in on the second pass, and the error handling in the second pass is the same as the normal BC to BSC transfer.
+4. IOC  (Immediate-Or-Cancel) Trade Out: the primary goal of transferring assets to BC is to trade. This event will instruct to trade a certain amount of an asset in CAoB into another asset as much as possible and transfer out all the results, i.e. the left the source and the traded target tokens of the trade, back to BSC. BC will handle such relayed events by sending an "Immediate-Or-Cancel", i.e. IOC order onto the trading pairs, once the next matching finishes, the result will be relayed back to BSC, which can be in either one or two assets.
+5. Auction Trade Out: Such event will instruct BC to send an auction order to trade a certain amount of an asset in **CAoB** into another asset as much as possible and transfer out all the results back to BSC at the end of the auction. Auction function is upcoming on BC.
 
 There are some details for the Trade Out:
 
 1. both can have a limit price (absolute or relative) for the trade;
 2. the end result will be written as cross-chain packages to relay back to BSC;
 3. cross-chain communication fees may be charged from the asset transferred back to BSC;
-4. BSC contract maintains a mirror of the balance and outstanding orders on CAoB. No     matter what error happens during the Trade Out, the final status will be  propagated back to the originating contract and clear its internal state.
+4. BSC contract maintains a mirror of the balance and outstanding orders on CAoB. No matter what error happens during the Trade Out, the final status will be  propagated back to the originating contract and clear its internal state.
 
 With the above features, it simply adds the cross-chain transfer and exchange functions with high liquidity onto all the smart contracts on BSC. It will greatly add the application scenarios on Smart Contract and dApps, and make 1 chain +1 chain > 2 chains.
 
@@ -256,12 +256,12 @@ Proof of Staked Authority brings in decentralization and community involvement. 
 1. Token holders, including the validators, can put their tokens “**bonded**” into the stake. Token holders can **delegate** their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to **re-delegate** their tokens<sup>1</sup>.
 2. All validator candidates will be ranked by the number of bonded tokens on them, and the top ones will become the real validators.
 3. Validators can share (part of) their blocking reward with their delegators.
-4. Validators can suffer from “**Slashing**”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will be shared by their **delegators as well**.
+4. Validators can suffer from “**Slashing**”, a punishment for their bad behaviors, such as double sign and/or instability.
 5. There is an “**unbonding period**” for validators and delegators so that the system makes sure the tokens remain bonded when bad behaviors are caught, the responsible will get slashed during this period.
 
 ## Staking on BC
 
-Ideally, such staking and reward logic should be built into the blockchain, and automatically executed as the blocking happens. Cosmos Hub, who shares the same Tendermint consensus and libraries with Binance Chain, works in this way.
+Ideally, such staking and reward logic should be built into the blockchain, and automatically executed as the blocking happens. Cosmos Hub, who shares the same Tendermint consensus and libraries with Beacon Chain, works in this way.
 
 BC has been preparing to enable staking logic since the design days. On the other side, as BSC wants to remain compatible with Ethereum as much as possible, it is a great challenge and efforts to implement such logic on it. This is especially true when Ethereum itself may move into a different Proof of Stake consensus protocol in a short (or longer) time. In order to keep the compatibility and reuse the good foundation of BC, the staking logic of BSC is implemented on BC:
 
@@ -293,7 +293,7 @@ It is quite a serious error and very likely deliberate offense when a validator 
 Anyone can submit a slash request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator. Upon receiving the evidence, if the BC verifies it to be valid:
 
 1. The validator will be removed from validator set by an instance BSC validator set update Cross-Chain update;
-2. The stake on the validator would be slashed by the predefined amount;
+2. A predefined amount of BNB would be slashed from the **self-delegated** BNB of the validator; Both validator and its delegators will not receive the staking rewards. 
 3. Part of the slashed BNB will allocate to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
 4. The rest of the slashed BNB will allocate to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
 
@@ -301,7 +301,7 @@ Anyone can submit a slash request on BC with the evidence of Double Sign of BSC,
 
 The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn. Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network. This instability of the operation will hurt the performance and introduce more indeterministic into the system.
 
-There can be an internal smart contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. In such a way, the poorly-operating validator should be gradually voted out of the validator set as their delegators will receive less or none reward. If the metrics remain above another higher level of threshold, the validator will be dropped from the rotation, and this will be propagated back to BC when a Slash will happen on the validator’s staking.
+There can be an internal smart contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. In such a way, the poorly-operating validator should be gradually voted out of the validator set as their delegators will receive less or none reward. If the metrics remain above another higher level of threshold, the validator will be dropped from the rotation, and this will be propagated back to BC, then a predefined amount of BNB would be slashed from the **self-delegated** BNB of the validator. Both validators and delegators will not receive their staking rewards. 
 
 ###  Governance Parameters
 
@@ -341,10 +341,10 @@ Such oracle type relaying depends on all the validators to support. As all the v
 
 # Outlook
 
-It is hard to conclude for Binance Chain, as it has never stopped evolving. The dual-chain strategy is to open the gate for users to take advantage of the fast transferring and trading on one side, and flexible and extendable programming on the other side, but it will be one stop along the development of Binance Chain. Here below are the topics to look into so as to facilitate the community better for more usability and extensibility:
+It is hard to conclude for BNB Chain, as it has never stopped evolving. The dual-chain strategy is to open the gate for users to take advantage of the fast transferring and trading on one side, and flexible and extendable programming on the other side, but it will be one stop along the development of BNB Chain. Here below are the topics to look into so as to facilitate the community better for more usability and extensibility:
 
 1. Add different digital asset model for different business use cases
-2. Enable more data feed, especially DEX market data, to be communicated from Binance DEX to BSC
+2. Enable more data feed, especially DEX market data, to be communicated from BNB DEX to BSC
 3. Provide interface and compatibility to integrate with Ethereum, including its further upgrade, and other blockchain
 4. Improve client side experience to manage wallets and use blockchain more  conveniently
 
