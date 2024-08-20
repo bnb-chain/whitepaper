@@ -2,8 +2,6 @@
 
 ## Table of Contents
 
-## Table of Contents
-
 - [BNB Smart Chain](#bnb-smart-chain)
 - [Motivation](#motivation)
 - [Evolution of BNB Chain](#evolution-of-bnb-chain)
