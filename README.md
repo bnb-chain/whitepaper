@@ -1,4 +1,4 @@
-# BNB Smart Chain White Paper
+soeng.ll060@gmail.com# BNB Smart Chain White Paper
 
 ## Revision
 
